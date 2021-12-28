@@ -2,7 +2,7 @@
 
 <!-- [START badges] -->
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8b307f95-e23b-4502-a686-46f2c0d1df68/deploy-status)](https://app.netlify.com/sites/yummy-crypto-nft-gallery/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fb324810-5979-47ba-8499-b189a5618eaf/deploy-status)](https://app.netlify.com/sites/yummy-crypto-nft-gallery/deploys)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 <!-- [END badges] -->
