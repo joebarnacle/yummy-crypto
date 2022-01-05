@@ -4,6 +4,16 @@
 
 This package is a monorepo for some projects related to Yummy Crypto. They are most done out of curiosity and interest and are not officially support by the Yummy Crypto team.
 
+## Modules
+
+### Toolbox
+
+TODO
+
+### NFT Gallery
+
+TODO
+
 ## Contributing
 
 Feel free to open a PR or if you feel like buying me a crypto beer that's also cool🍻
