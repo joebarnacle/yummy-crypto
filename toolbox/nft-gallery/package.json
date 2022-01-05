@@ -1,5 +1,6 @@
 {
   "name": "@yummy-crypto-toolbox/nft-gallery",
+  "license": "Apache-2.0",
   "version": "1.0.0",
   "dependencies": {
     "node-fetch": "2",
