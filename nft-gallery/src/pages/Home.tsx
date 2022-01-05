@@ -29,7 +29,7 @@ import Page from '../components/Page';
 import Header from '../components/Header';
 import SearchField from '../components/SearchField';
 import ExpandableFilter from '../components/ExpandableFilter';
-
+import ImageGrid from '../components/ImageGrid';
 import useData, { Metadata } from '../hooks/UseData';
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -209,46 +209,43 @@ const HomePage = () => {
         <>
           {filteredItems.length > 0 && (
             <>
-              <Grid container spacing={{ xs: 2 }}>
-                {pagedItems.map((item, index) => (
-                  <Grid item key={index}>
-                    <Paper elevation={1} sx={{ maxWidth: 256, overflow: 'hidden' }}>
-                      <LazyLoadImage
-                        height={256}
-                        width={256}
-                        alt={item.name}
-                        effect="opacity"
-                        src={`/images/token/${item.id}.webp`}
-                        placeholder={<Skeleton variant="rectangular" height={256} width={256} />}
-                        onClick={() => {
-                          setSelected(data[parseInt(item.id) - 1]);
-                        }}
-                        style={{ cursor: 'pointer' }}
-                      />
+              <ImageGrid>
+                {pagedItems.map(item => (
+                  <Paper key={item.id} elevation={1}>
+                    <LazyLoadImage
+                      alt={item.name}
+                      width="100%"
+                      effect="opacity"
+                      src={`/images/token/${item.id}.webp`}
+                      placeholder={<Skeleton variant="rectangular" height={256} width={256} />}
+                      onClick={() => {
+                        setSelected(data[parseInt(item.id) - 1]);
+                      }}
+                      style={{ cursor: 'pointer' }}
+                    />
 
-                      <Box display="flex" p={1} alignItems="center">
-                        <Typography variant="subtitle2" component="div" flex="1">
-                          {item.name}
-                        </Typography>
-                        <Chip
-                          color="primary"
-                          variant="outlined"
-                          size="small"
-                          label={`0x...${item.owner.slice(item.owner.length - 4)}`}
-                          clickable
-                          onClick={() => {
-                            unstable_batchedUpdates(() => {
-                              setOldTextFilter(textFilter);
-                              setTextFilter('');
-                              setWallet(item.owner);
-                            });
-                          }}
-                        />
-                      </Box>
-                    </Paper>
-                  </Grid>
+                    <Box display="flex" p={1} alignItems="center">
+                      <Typography variant="subtitle2" component="div" flex="1">
+                        {item.name}
+                      </Typography>
+                      <Chip
+                        color="primary"
+                        variant="outlined"
+                        size="small"
+                        label={`0x...${item.owner.slice(item.owner.length - 4)}`}
+                        clickable
+                        onClick={() => {
+                          unstable_batchedUpdates(() => {
+                            setOldTextFilter(textFilter);
+                            setTextFilter('');
+                            setWallet(item.owner);
+                          });
+                        }}
+                      />
+                    </Box>
+                  </Paper>
                 ))}
-              </Grid>
+              </ImageGrid>
               {filteredItems.length > pageSize && (
                 <Box p={5} textAlign="center">
                   <Button
