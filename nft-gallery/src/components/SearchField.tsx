@@ -21,7 +21,7 @@ const SearchField = ({ value = '', onChange, resultCount }: SearchFieldProps) =>
   };
 
   return (
-    <Paper sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+    <Paper sx={{ display: 'flex', alignItems: 'center', width: { xs: '100%', md: '30vw' }, margin: 'auto' }}>
       <InputBase
         autoFocus
         sx={{ ml: 1, flex: 1 }}
