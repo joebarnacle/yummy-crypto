@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { unstable_batchedUpdates } from 'react-dom';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/opacity.css';
@@ -10,7 +10,6 @@ import Chip from '@mui/material/Chip';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Skeleton from '@mui/material/Skeleton';
@@ -22,7 +21,6 @@ import IconButton from '@mui/material/IconButton';
 
 import DownloadingIcon from '@mui/icons-material/Downloading';
 import LaunchIcon from '@mui/icons-material/Launch';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 import Page from '../components/Page';

@@ -21,7 +21,7 @@ const SearchField = ({ value = '', onChange, resultCount }: SearchFieldProps) =>
   };
 
   return (
-    <Paper sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', width: '30vw', margin: 'auto' }}>
+    <Paper sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
       <InputBase
         autoFocus
         sx={{ ml: 1, flex: 1 }}
@@ -46,7 +46,11 @@ const SearchField = ({ value = '', onChange, resultCount }: SearchFieldProps) =>
       >
         <CloseIcon />
       </IconButton>
-      <Chip sx={{ ml: 1, mr: 2 }} size="small" label={getResultCountText(resultCount)} />
+      <Chip
+        sx={{ display: { xs: 'none', md: 'flex' }, ml: 1, mr: 2 }}
+        size="small"
+        label={getResultCountText(resultCount)}
+      />
     </Paper>
   );
 };
