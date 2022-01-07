@@ -21,7 +21,7 @@ import useColorMode from '../hooks/UseColorMode';
 import usePancakeSwap from '../hooks/UsePancakeSwap';
 
 interface HeaderProps {
-  onMenuClick?: () => void;
+  onMenuClick?: (event: React.KeyboardEvent | React.MouseEvent) => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ children, onMenuClick }) => {
