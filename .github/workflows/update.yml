@@ -1,0 +1,23 @@
+name: Update scraped data
+on:
+  schedule:
+    - cron: 0 0 * * *
+
+jobs:
+  update:
+    name: Run nft-gallery toolbox scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install
+        working-directory: toolbox/nft-gallery
+      - name: Run script
+        run: node index.js
+        working-directory: toolbox/nft-gallery
+      - name: Commit report
+        run: |
+          git config --global user.name 'Autocommit bot'
+          git config --global user.email 'autocommit-bot@users.noreply.github.com'
+          git commit -am "chore: Automated update"
+          git push
