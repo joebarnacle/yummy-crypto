@@ -2,7 +2,7 @@
 
 <!-- [START badges] -->
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/191c6ac1-1187-4000-90b0-bdaaf32db5b3/deploy-status)](https://app.netlify.com/sites/yummy-crypto/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/17f45716-8914-4c0d-854c-a1793c95c224/deploy-status)](https://app.netlify.com/sites/yummy-crypto/deploys)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 <!-- [END badges] -->
