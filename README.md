@@ -2,6 +2,7 @@
 
 <!-- [START badges] -->
 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 ![Update](https://github.com/theothergothamdev/yummy-crypto/actions/workflows/update.yml/badge.svg)
 
 <!-- [END badges] -->
@@ -21,6 +22,8 @@ Contains the follow helper scripts:
 ### NFT Gallery
 
 React based website to preview all NFT images.
+
+Visit the website at [https://yummy-crypto-nft-gallery.netlify.app/](https://yummy-crypto-nft-gallery.netlify.app/)
 
 ## Contributing
 

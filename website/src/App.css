@@ -1,0 +1,36 @@
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-10px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.floating-image {
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.odd-section {
+  background: rgba(241, 243, 246, 1);
+}
+
+@media (min-width: 500px) {
+  section {
+    min-height: 400px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}

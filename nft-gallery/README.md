@@ -36,6 +36,8 @@ yarn build
 
 Feel free to open a PR or if you feel like buying me a crypto beer that's also cool🍻
 
+## Donating
+
 > 0xd2d4D33F7539bE8f0f03E748Cb8B1eEB307ce75
 
-![Account QR](../donate.png)
+![Account QR](donate.png)
