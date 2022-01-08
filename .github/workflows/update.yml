@@ -19,5 +19,5 @@ jobs:
         run: |
           git config --global user.name 'Autocommit bot'
           git config --global user.email 'autocommit-bot@users.noreply.github.com'
-          git commit -am "chore: Automated update"
+          git commit -am "chore: Automated update" || echo "No changes to commit"
           git push

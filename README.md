@@ -25,6 +25,12 @@ React based website to preview all NFT images.
 
 Visit the website at [https://yummy-crypto-nft-gallery.netlify.app/](https://yummy-crypto-nft-gallery.netlify.app/)
 
+### Website
+
+Main React based website for yummy-crypto.
+
+Visit the website at [https://yummy-crypto.netlify.app/](https://yummy-crypto.netlify.app/)
+
 ## Contributing
 
 Feel free to open a PR or if you feel like buying me a crypto beer that's also cool🍻
