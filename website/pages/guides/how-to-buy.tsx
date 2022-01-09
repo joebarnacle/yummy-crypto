@@ -42,8 +42,9 @@ const steps: StepsProps['steps'] = [
     primary: 'Swap BNB for YUMMY',
     secondary: (
       <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-        <strong>Important:</strong> You'll be charged separately for Gas Fees, which is usually a single BNB fee that is
-        under (or around) a dollar, so it's helpful to always keep at least a few dollars in BNB at all times.
+        <strong>Important:</strong> You&apos;ll be charged separately for Gas Fees, which is usually a single BNB fee
+        that is under (or around) a dollar, so it&apos;s helpful to always keep at least a few dollars in BNB at all
+        times.
       </Typography>
     ),
   },

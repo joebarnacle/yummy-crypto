@@ -152,7 +152,7 @@ const Header = () => {
             rel="noopener"
           >
             <ListItemIcon>
-              <Image height={24} width={24} src={pancakeSwapLogo} />
+              <Image alt="pancake swap logo" height={24} width={24} src={pancakeSwapLogo} />
             </ListItemIcon>
             <ListItemText primary="Buy on PancakeSwap" />
           </ListItem>
@@ -164,7 +164,7 @@ const Header = () => {
             rel="noopener"
           >
             <ListItemIcon>
-              <Image height={24} width={24} src={bitmartLogo} />
+              <Image alt="bitmart logo" height={24} width={24} src={bitmartLogo} />
             </ListItemIcon>
             <ListItemText primary="Buy on Bitmart" />
           </ListItem>
@@ -176,7 +176,7 @@ const Header = () => {
             rel="noopener"
           >
             <ListItemIcon>
-              <ConstrastImage height={24} width={24} src={sokuSwapLogo} />
+              <ConstrastImage alt="soku swap logo" height={24} width={24} src={sokuSwapLogo} />
             </ListItemIcon>
             <ListItemText primary="Buy on SokuSwap" />
           </ListItem>

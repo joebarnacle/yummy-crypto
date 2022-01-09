@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Image from 'next/image'
 
 import Alert from '@mui/material/Alert'
 import Box from '@mui/material/Box'
@@ -203,7 +204,7 @@ const NFTs: NextPage = () => {
           <ImageList cols={getResponsiveCols()}>
             {itemData.map(item => (
               <ImageListItem key={item.img}>
-                <img src={`${item.img}`} alt={item.title} loading="lazy" />
+                <Image src={`${item.img}`} alt={item.title} loading="lazy" />
               </ImageListItem>
             ))}
           </ImageList>

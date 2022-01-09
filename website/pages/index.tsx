@@ -38,12 +38,12 @@ const Home: NextPage = () => {
             <Grid item xs={12} md={8} sx={{ textAlign: { xs: 'center', md: 'left' } }}>
               <Box mb={3}>
                 <Typography sx={{ fontSize: { xs: '2.2rem', md: '3rem' } }} variant="h3">
-                  Together we're <strong>changing lives</strong> across the globe
+                  Together we&apos;re <strong>changing lives</strong> across the globe
                 </Typography>
               </Box>
               <Typography variant="subtitle2">
                 Yummy Crypto is a project launched on May 1st with a clear vision to deliver value to holders via{' '}
-                <strong>Growth Fund</strong> while providing contributions to help solve some of the world's most
+                <strong>Growth Fund</strong> while providing contributions to help solve some of the world&apos;s most
                 pressing issues.
               </Typography>
               <Box mt={4}>
@@ -111,14 +111,14 @@ const Home: NextPage = () => {
               </Typography>
               <Stack spacing={3}>
                 <Typography>
-                  Within our short history, we've already donated over $1.1M, and 35% of the total token supply has been
-                  burned as a method to return value to our holders. And that's just the start of it!
+                  Within our short history, we&apos;ve already donated over $1.1M, and 35% of the total token supply has
+                  been burned as a method to return value to our holders. And that&apos;s just the start of it!
                 </Typography>
                 <Typography>
-                  We recently introduced our <strong>Growth Fund</strong> to further maximize Yummy holders' returns
-                  through daily buybacks and burns. In addition, we have secured partnerships with prominent industry
-                  players such as Bare Knuckle FC to further advance our social exposure within the crypto space and
-                  have much more in the works!
+                  We recently introduced our <strong>Growth Fund</strong> to further maximize Yummy holders&apos;
+                  returns through daily buybacks and burns. In addition, we have secured partnerships with prominent
+                  industry players such as Bare Knuckle FC to further advance our social exposure within the crypto
+                  space and have much more in the works!
                 </Typography>
               </Stack>
             </Grid>
@@ -223,7 +223,7 @@ const Home: NextPage = () => {
             </Grid>
             <Grid item xs={12} md={4}>
               <Box display="flex" justifyContent="center">
-                <img className="floating-image" height={256} src="/images/sprout.png" alt="yummy logo" />
+                <Image className="floating-image" width={125} height={220} src="/images/sprout.png" alt="yummy logo" />
               </Box>
             </Grid>
           </Grid>
@@ -250,18 +250,14 @@ const Home: NextPage = () => {
                     },
                   }}
                 >
-                  <img
+                  <Box
                     style={{
                       padding: 12,
                       backgroundColor: background ?? undefined,
-                      objectFit: 'contain',
                     }}
-                    src={imgSrc}
-                    alt={imgAlt}
-                    width={132}
-                    height={132}
-                    loading="lazy"
-                  />
+                  >
+                    <Image objectFit="contain" src={imgSrc} alt={imgAlt} width={132} height={132} loading="lazy" />
+                  </Box>
                 </ImageListItem>
               ))}
             </ImageList>

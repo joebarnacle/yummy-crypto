@@ -178,20 +178,20 @@ const Footer = () => {
         <Typography variant="subtitle2" sx={{ fontSize: 10, mb: 1 }}>
           <strong>LEGAL DISCLAIMER:</strong> The information provided on YummyCrypto.com does not constitute investment
           advice, financial advice, trading advice, or any other sort of advice and you should not treat any of the
-          website's content as such. The Yummy team does not recommend that any cryptocurrency should be bough, sold, or
-          held by you. Do conduct your own due diligence and consult your financial advisor before making any investment
-          decisions. By purchasing Yummy, you agree that you are not purchasing a security or investment and you agree
-          to hold the team harmless and not liable for any losses or taxes you may incur. You also agree that the team
-          is presenting the token “as is” and is not required to provide any support or services. You should have no
-          expectation of any form from Yummy and its team. Although Yummy is a community driven token for social
+          website&apos;s content as such. The Yummy team does not recommend that any cryptocurrency should be bough,
+          sold, or held by you. Do conduct your own due diligence and consult your financial advisor before making any
+          investment decisions. By purchasing Yummy, you agree that you are not purchasing a security or investment and
+          you agree to hold the team harmless and not liable for any losses or taxes you may incur. You also agree that
+          the team is presenting the token “as is” and is not required to provide any support or services. You should
+          have no expectation of any form from Yummy and its team. Although Yummy is a community driven token for social
           networking and not a registered digital currency, the team strongly recommends that citizens in areas with
-          government bans on Crypto do not purchase it because the team cannot ensure compliance with your territory's
-          regulations. Always make sure that you are in compliance with your local laws and regulations before you make
-          any purchase.
+          government bans on Crypto do not purchase it because the team cannot ensure compliance with your
+          territory&apos;s regulations. Always make sure that you are in compliance with your local laws and regulations
+          before you make any purchase.
         </Typography>
         <Typography variant="subtitle2" sx={{ fontSize: 10 }}>
           <strong>RISK DISCLOSURE:</strong> Please note there are always risks associated with smart-contracts. Please
-          use at your own risk. Yummy is not a registered broker, analyst, or investment advisor. Everything that's
+          use at your own risk. Yummy is not a registered broker, analyst, or investment advisor. Everything that&apos;s
           provided on this site is purely for guidance, informational and educational purposes, and fun. All information
           contained herein should be independently verified and confirmed. We do not accept any liability for any loss
           or damage whatsoever caused in reliance upon such information or services. Please be aware of the risks
