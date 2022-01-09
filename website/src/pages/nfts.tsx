@@ -18,7 +18,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-import Page from '../src/components/Page'
+import Page from '../components/Page'
 
 const itemData = Array(8)
   .fill(0)

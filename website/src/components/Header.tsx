@@ -72,29 +72,14 @@ const Header = () => {
             <RouterLink href="/guides/how-to-buy">
               <Button>How to buy</Button>
             </RouterLink>
-
-            <Button
-              href="https://poocoin.app/tokens/0xb003c68917bab76812797d1b8056822f48e2e4fe"
-              component="a"
-              target="_blank"
-              rel="noopener"
-            >
-              Chart
-            </Button>
-
-            <Button
-              href="https://bscscan.com/address/0xB003C68917BaB76812797d1b8056822f48E2e4fe"
-              component="a"
-              target="_blank"
-              rel="noopener"
-            >
-              Contract
-            </Button>
             <RouterLink href="/community">
               <Button>Community</Button>
             </RouterLink>
             <RouterLink href="/nfts">
               <Button>NFTs</Button>
+            </RouterLink>
+            <RouterLink href="/news">
+              <Button>News</Button>
             </RouterLink>
             <Button
               href="https://yummycryptomerch.com/"

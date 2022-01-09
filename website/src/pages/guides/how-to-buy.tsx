@@ -5,10 +5,10 @@ import Typography from '@mui/material/Typography'
 
 import Divider from '@mui/material/Divider'
 
-import ContractBlock from '../../src/components/ContractBlock'
-import Steps, { StepsProps } from '../../src/components/Steps'
-import ResourceVideo from '../../src/components/ResourceVideo'
-import Page from '../../src/components/Page'
+import ContractBlock from '../../components/ContractBlock'
+import Steps, { StepsProps } from '../../components/Steps'
+import ResourceVideo from '../../components/ResourceVideo'
+import Page from '../../components/Page'
 
 const steps: StepsProps['steps'] = [
   {

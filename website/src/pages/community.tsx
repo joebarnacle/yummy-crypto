@@ -24,7 +24,7 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 
-import Page from '../src/components/Page'
+import Page from '../components/Page'
 
 const Community: NextPage = () => {
   return (

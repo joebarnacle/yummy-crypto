@@ -1,6 +1,8 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import RouterLink from 'next/link'
 import Image from 'next/image'
+
+import { createClient } from 'contentful'
 
 import CountUp from 'react-countup'
 
@@ -16,18 +18,20 @@ import Typography from '@mui/material/Typography'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 
-import yummyLogo from '../public/images/yummy-logo-small.svg'
-import pancakeSwapLogo from '../public/images/partners/pancake-swap-logo.png'
-import bitmartLogo from '../public/images/partners/bitmart-logo.png'
-import sokuSwapLogo from '../public/images/partners/soku-swap-logo.png'
+import yummyLogo from '../../public/images/yummy-logo-small.svg'
+import pancakeSwapLogo from '../../public/images/partners/pancake-swap-logo.png'
+import bitmartLogo from '../../public/images/partners/bitmart-logo.png'
+import sokuSwapLogo from '../../public/images/partners/soku-swap-logo.png'
 
-import { partnersData } from '../data/partners'
+import ContrastButton from '../components/ContrastButton'
+import HeroHeader from '../components/HeroHeader'
+import Page from '../components/Page'
 
-import ContrastButton from '../src/components/ContrastButton'
-import HeroHeader from '../src/components/HeroHeader'
-import Page from '../src/components/Page'
+interface HomeProps {
+  partners: any[]
+}
 
-const Home: NextPage = () => {
+const Home: NextPage<HomeProps> = ({ partners }) => {
   const isDesktop = useMediaQuery(`@media (min-width:600px)`)
 
   return (
@@ -236,11 +240,11 @@ const Home: NextPage = () => {
           </Typography>
           <Paper sx={{ p: { xs: 0, md: 2 } }} variant={isDesktop ? 'outlined' : undefined} elevation={0}>
             <ImageList cols={isDesktop ? 8 : 2} gap={isDesktop ? 8 : 0} sx={{ m: 0 }}>
-              {partnersData.map(({ href, imgSrc, imgAlt, background }) => (
+              {partners.map(partner => (
                 <ImageListItem
-                  key={href}
+                  key={partner.fields.href}
                   component="a"
-                  href={href}
+                  href={partner.fields.href}
                   target="_blank"
                   rel="noopener"
                   sx={{
@@ -253,10 +257,17 @@ const Home: NextPage = () => {
                   <Box
                     style={{
                       padding: 12,
-                      backgroundColor: background ?? undefined,
+                      backgroundColor: partner.fields.backgroundColor ?? undefined,
                     }}
                   >
-                    <Image objectFit="contain" src={imgSrc} alt={imgAlt} width={132} height={132} loading="lazy" />
+                    <Image
+                      objectFit="contain"
+                      src={`https:${partner.fields.logo.fields.file.url}`}
+                      alt={partner.fields.name}
+                      width={132}
+                      height={132}
+                      loading="lazy"
+                    />
                   </Box>
                 </ImageListItem>
               ))}
@@ -266,6 +277,21 @@ const Home: NextPage = () => {
       </section>
     </Page>
   )
+}
+
+const client = createClient({
+  space: process.env.CONTENTFUL_SPACE_ID || '',
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
+})
+
+export const getStaticProps: GetStaticProps = async () => {
+  const partners = await client.getEntries({ content_type: 'partner' })
+
+  return {
+    props: {
+      partners: partners.items,
+    },
+  }
 }
 
 export default Home

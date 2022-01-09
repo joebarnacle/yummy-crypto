@@ -7,10 +7,10 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { CssBaseline } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 
-import Header from '../src/components/Header'
-import Footer from '../src/components/Footer'
-import ScrollToTop from '../src/components/ScrollToTop'
-import ResetScroll from '../src/components/ResetScroll'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import ScrollToTop from '../components/ScrollToTop'
+import ResetScroll from '../components/ResetScroll'
 
 import '../styles/globals.css'
 

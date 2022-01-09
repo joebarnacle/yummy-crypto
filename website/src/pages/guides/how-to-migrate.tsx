@@ -8,12 +8,12 @@ import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
 
-import ContractBlock from '../../src/components/ContractBlock'
-import Steps, { StepsProps } from '../../src/components/Steps'
-import ResourceVideo from '../../src/components/ResourceVideo'
-import Page from '../../src/components/Page'
+import ContractBlock from '../../components/ContractBlock'
+import Steps, { StepsProps } from '../../components/Steps'
+import ResourceVideo from '../../components/ResourceVideo'
+import Page from '../../components/Page'
 
-import migrationQRCode from '../../public/images/migration-qrcode.jpg'
+import migrationQRCode from '../../../public/images/migration-qrcode.jpg'
 
 const steps: StepsProps['steps'] = [
   {

@@ -108,6 +108,15 @@ const Footer = () => {
                   Contract
                 </StyledLink>
               </li>
+              <li>
+                <StyledLink
+                  href="https://poocoin.app/tokens/0xb003c68917bab76812797d1b8056822f48e2e4fe"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Chart
+                </StyledLink>
+              </li>
             </List>
           </Grid>
         </Grid>
