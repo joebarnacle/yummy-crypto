@@ -1,3 +1,6 @@
+import type { NextPage } from 'next'
+import Image from 'next/image'
+
 import Alert from '@mui/material/Alert'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
@@ -5,12 +8,12 @@ import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
 import Stack from '@mui/material/Stack'
 
-import ContractBlock from '../../components/ContractBlock'
-import Steps, { StepsProps } from '../../components/Steps'
-import ResourceVideo from '../../components/ResourceVideo'
-import Page from '../../components/Page'
+import ContractBlock from '../../src/components/ContractBlock'
+import Steps, { StepsProps } from '../../src/components/Steps'
+import ResourceVideo from '../../src/components/ResourceVideo'
+import Page from '../../src/components/Page'
 
-import migrationQRCode from '../../../public/images/migration-qrcode.jpg'
+import migrationQRCode from '../../public/images/migration-qrcode.jpg'
 
 const steps: StepsProps['steps'] = [
   {
@@ -22,7 +25,7 @@ const steps: StepsProps['steps'] = [
           <ContractBlock value="0x1F94DEB7CD97E2aC1A72dd8c9fbf177625aa240B" />
         </Typography>
         <Box mt={2} mb={2}>
-          <img src={migrationQRCode} alt="qr code for yummy address" />
+          <Image src={migrationQRCode} alt="qr code for yummy address" />
         </Box>
         <Alert severity="warning">
           DO NOT send <strong>YummyMig</strong> tokens to this address!
@@ -45,7 +48,7 @@ const steps: StepsProps['steps'] = [
   },
 ]
 
-const HowToMigrate = () => {
+const HowToMigrate: NextPage = () => {
   return (
     <Page title="Guides | How to migrate">
       <Container sx={{ mt: { xs: 2, md: 5 } }}>

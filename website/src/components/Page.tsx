@@ -1,18 +1,16 @@
 import React from 'react'
-import { Helmet, HelmetProps } from 'react-helmet'
+import Head from 'next/head'
 
 interface PageProps {
   title?: string
-  metaTags?: HelmetProps['children']
 }
 
-const Page: React.FC<PageProps> = ({ children, metaTags, title }) => {
+const Page: React.FC<PageProps> = ({ children, title }) => {
   return (
     <>
-      <Helmet>
+      <Head>
         <title>{title ? `${title} - ` : ''}Yummy Crypto</title>
-        {metaTags}
-      </Helmet>
+      </Head>
       {children}
     </>
   )

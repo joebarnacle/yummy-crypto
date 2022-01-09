@@ -1,12 +1,14 @@
+import type { NextPage } from 'next'
+
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 
 import Divider from '@mui/material/Divider'
 
-import ContractBlock from '../../components/ContractBlock'
-import Steps, { StepsProps } from '../../components/Steps'
-import ResourceVideo from '../../components/ResourceVideo'
-import Page from '../../components/Page'
+import ContractBlock from '../../src/components/ContractBlock'
+import Steps, { StepsProps } from '../../src/components/Steps'
+import ResourceVideo from '../../src/components/ResourceVideo'
+import Page from '../../src/components/Page'
 
 const steps: StepsProps['steps'] = [
   {
@@ -21,7 +23,7 @@ const steps: StepsProps['steps'] = [
   },
   {
     primary: 'Connect your wallet to Pancake Swap',
-    secondary: 'Access your wallet to Pancake Swap by clicking ‘Connect to a wallet’ and selecting MetaMask.',
+    secondary: "Access your wallet to Pancake Swap by clicking 'Connect to a wallet' and selecting MetaMask.",
   },
   {
     primary: 'Add YUMMY token contract to Pancake Swap',
@@ -40,14 +42,14 @@ const steps: StepsProps['steps'] = [
     primary: 'Swap BNB for YUMMY',
     secondary: (
       <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-        <strong>Important:</strong> You’ll be charged separately for Gas Fees, which is usually a single BNB fee that is
-        under (or around) a dollar, so it’s helpful to always keep at least a few dollars in BNB at all times.
+        <strong>Important:</strong> You'll be charged separately for Gas Fees, which is usually a single BNB fee that is
+        under (or around) a dollar, so it's helpful to always keep at least a few dollars in BNB at all times.
       </Typography>
     ),
   },
 ]
 
-const HowToBuy = () => {
+const HowToBuy: NextPage = () => {
   return (
     <Page title="Guides | How to buy">
       <Container sx={{ mt: { xs: 4, md: 10 } }}>

@@ -1,4 +1,7 @@
-import { Link as RouterLink } from 'react-router-dom'
+import type { NextPage } from 'next'
+import RouterLink from 'next/link'
+import Image from 'next/image'
+
 import CountUp from 'react-countup'
 
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -13,18 +16,18 @@ import Typography from '@mui/material/Typography'
 import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 
-import yummyLogo from '../../public/images/yummy-logo-small.svg'
-import pancakeSwapLogo from '../../public/images/partners/pancake-swap-logo.png'
-import bitmartLogo from '../../public/images/partners/bitmart-logo.png'
-import sokuSwapLogo from '../../public/images/partners/soku-swap-logo.png'
+import yummyLogo from '../public/images/yummy-logo-small.svg'
+import pancakeSwapLogo from '../public/images/partners/pancake-swap-logo.png'
+import bitmartLogo from '../public/images/partners/bitmart-logo.png'
+import sokuSwapLogo from '../public/images/partners/soku-swap-logo.png'
 
 import { partnersData } from '../data/partners'
 
-import Page from '../components/Page'
-import ContrastButton from '../components/ContrastButton'
-import HeroHeader from '../components/HeroHeader'
+import ContrastButton from '../src/components/ContrastButton'
+import HeroHeader from '../src/components/HeroHeader'
+import Page from '../src/components/Page'
 
-const Home = () => {
+const Home: NextPage = () => {
   const isDesktop = useMediaQuery(`@media (min-width:600px)`)
 
   return (
@@ -45,14 +48,8 @@ const Home = () => {
               </Typography>
               <Box mt={4}>
                 <Stack direction={{ xs: 'column', md: 'row' }} gap={2}>
-                  <Button
-                    disableElevation
-                    component={RouterLink}
-                    variant="contained"
-                    sx={{ bgcolor: 'secondary.main' }}
-                    to="/guides/how-to-buy"
-                  >
-                    How to Buy
+                  <Button disableElevation variant="contained" sx={{ bgcolor: 'secondary.main' }}>
+                    <RouterLink href="/guides/how-to-buy">How to Buy</RouterLink>
                   </Button>
                   <ContrastButton
                     component="a"
@@ -73,7 +70,7 @@ const Home = () => {
                   href="https://pancakeswap.finance/swap?outputCurrency=0xb003c68917bab76812797d1b8056822f48e2e4fe"
                   target="_blank"
                   rel="noopener"
-                  startIcon={<img width={24} height={24} alt="pancake swap logo" src={pancakeSwapLogo} />}
+                  startIcon={<Image width={24} height={24} alt="pancake swap logo" src={pancakeSwapLogo} />}
                   sx={{ justifyContent: 'flex-start' }}
                 >
                   Buy on PancakeSwap
@@ -83,7 +80,7 @@ const Home = () => {
                   href="https://www.bitmart.com/trade/en?symbol=YUMMY_USDT"
                   target="_blank"
                   rel="noopener"
-                  startIcon={<img width={24} height={24} alt="bitmart logo" src={bitmartLogo} />}
+                  startIcon={<Image width={24} height={24} alt="bitmart logo" src={bitmartLogo} />}
                   sx={{ justifyContent: 'flex-start' }}
                 >
                   Buy on Bitmart
@@ -94,7 +91,7 @@ const Home = () => {
                   href="https://app.sokuswap.finance/bsc/#/swap?inputCurrency=0xB8c77482e45F1F44dE1745F52C74426C631bDD52?&outputCurrency=0xB003C68917BaB76812797d1b8056822f48E2e4fe"
                   target="_blank"
                   rel="noopener"
-                  startIcon={<img width={24} height={24} alt="soku swap logo" src={sokuSwapLogo} />}
+                  startIcon={<Image width={24} height={24} alt="soku swap logo" src={sokuSwapLogo} />}
                   sx={{ justifyContent: 'flex-start' }}
                 >
                   Buy on SokuSwap
@@ -127,7 +124,13 @@ const Home = () => {
             </Grid>
             <Grid item xs={12} md={6}>
               <Box display="flex" justifyContent="center">
-                <img className="floating-image" height={isDesktop ? 256 : 156} src={yummyLogo} alt="yummy logo" />
+                <Image
+                  className="floating-image"
+                  height={isDesktop ? 256 : 156}
+                  width={isDesktop ? 256 : 156}
+                  src={yummyLogo}
+                  alt="yummy logo"
+                />
               </Box>
             </Grid>
           </Grid>
@@ -142,7 +145,13 @@ const Home = () => {
               </Typography>
               <Typography
                 variant="h5"
-                sx={{ borderBottom: '5px solid', borderBottomColor: 'primary.main', borderRadius: 3, mb: 1, pb: 1 }}
+                sx={{
+                  borderBottom: '5px solid',
+                  borderBottomColor: 'primary.main',
+                  borderRadius: 3,
+                  mb: 1,
+                  pb: 1,
+                }}
               >
                 DONATED
               </Typography>
@@ -155,7 +164,13 @@ const Home = () => {
               </Typography>
               <Typography
                 variant="h5"
-                sx={{ borderBottom: '5px solid', borderBottomColor: 'primary.main', borderRadius: 3, mb: 1, pb: 1 }}
+                sx={{
+                  borderBottom: '5px solid',
+                  borderBottomColor: 'primary.main',
+                  borderRadius: 3,
+                  mb: 1,
+                  pb: 1,
+                }}
               >
                 GROWTH FUND
               </Typography>

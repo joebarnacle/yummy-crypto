@@ -1,6 +1,6 @@
 import Paper, { PaperProps } from '@mui/material/Paper'
 
-import './HeroHeader.scss'
+import styles from './HeroHeader.module.scss'
 
 const HeroHeader: React.FC<PaperProps> = ({ children, sx, ...props }) => {
   return (
@@ -16,10 +16,10 @@ const HeroHeader: React.FC<PaperProps> = ({ children, sx, ...props }) => {
       }}
       {...props}
     >
-      <div className="stars">
-        <div className="stars-s" />
-        <div className="stars-m" />
-        <div className="stars-l" />
+      <div className={styles['stars']}>
+        <div className={styles['stars-s']} />
+        <div className={styles['stars-m']} />
+        <div className={styles['stars-l']} />
       </div>
 
       {children}

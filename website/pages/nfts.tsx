@@ -1,3 +1,5 @@
+import type { NextPage } from 'next'
+
 import Alert from '@mui/material/Alert'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -15,7 +17,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-import Page from '../components/Page'
+import Page from '../src/components/Page'
 
 const itemData = Array(8)
   .fill(0)
@@ -24,7 +26,7 @@ const itemData = Array(8)
     title: `NFT preview ${index + 1}`,
   }))
 
-const NFTs = () => {
+const NFTs: NextPage = () => {
   const sm = useMediaQuery(`@media (min-width:600px)`)
   const md = useMediaQuery(`@media (min-width:900px)`)
 

@@ -1,3 +1,5 @@
+import type { NextPage } from 'next'
+
 import Alert from '@mui/material/Alert'
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
@@ -22,9 +24,9 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
 
-import Page from '../components/Page'
+import Page from '../src/components/Page'
 
-const Community = () => {
+const Community: NextPage = () => {
   return (
     <Page title="Community">
       <Container sx={{ mt: { xs: 4, md: 10 } }}>
