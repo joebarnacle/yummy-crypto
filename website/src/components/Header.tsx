@@ -24,9 +24,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import Button from './ContrastButton'
 
 import yummyLogoLarge from '../../public/images/yummy-logo-large.svg'
-import pancakeSwapLogo from '../../public/images/partners/pancake-swap-logo.png'
-import bitmartLogo from '../../public/images/partners/bitmart-logo.png'
-import sokuSwapLogo from '../../public/images/partners/soku-swap-logo.png'
+import pancakeSwapLogo from '../../public/images/pancake-swap-logo.png'
+import bitmartLogo from '../../public/images/bitmart-logo.png'
+import sokuSwapLogo from '../../public/images/soku-swap-logo.png'
 
 const ConstrastImage = styled(Image)`
   background: #01084a;

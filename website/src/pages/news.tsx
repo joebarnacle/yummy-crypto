@@ -8,9 +8,9 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Divider from '@mui/material/Divider'
 import Typography from '@mui/material/Typography'
-import Link from '@mui/material/Link'
 
 import Page from '../components/Page'
+import { formatDate } from '../utils'
 
 interface NewsProps {
   items: any[]
@@ -23,7 +23,7 @@ const News: NextPage<NewsProps> = ({ items }) => {
         {items.map((item, index) => (
           <Box key={index} mt={5}>
             <Box mb={2}>
-              <Typography variant="body2">Published · Dec 27, 2021</Typography>
+              <Typography variant="body2">Published · {formatDate(item.sys.createdAt)}</Typography>
             </Box>
             <Typography variant="h4" sx={{ flex: 1, fontWeight: 600 }}>
               {item.fields.title}

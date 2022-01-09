@@ -12,6 +12,13 @@ import Page from '../../components/Page'
 
 import { formatDate } from '../../utils'
 
+interface Article {
+  title: string
+  slug: string
+  content: any
+  author: any
+}
+
 interface ArticleProps {
   item: Article
   createdAt: string
@@ -19,7 +26,7 @@ interface ArticleProps {
 
 const Article: NextPage<ArticleProps> = ({ item, createdAt }) => {
   return (
-    <Page title="Article">
+    <Page title={item.title}>
       <Container sx={{ mt: { xs: 4, md: 10 }, mb: 5 }}>
         <Box mb={2}>
           <Typography variant="body2">Published · {createdAt}</Typography>
@@ -53,13 +60,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       createdAt: formatDate(items[0].sys.createdAt),
     },
   }
-}
-
-interface Article {
-  title: string
-  slug: string
-  content: any
-  author: any
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

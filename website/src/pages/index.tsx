@@ -19,9 +19,9 @@ import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 
 import yummyLogo from '../../public/images/yummy-logo-small.svg'
-import pancakeSwapLogo from '../../public/images/partners/pancake-swap-logo.png'
-import bitmartLogo from '../../public/images/partners/bitmart-logo.png'
-import sokuSwapLogo from '../../public/images/partners/soku-swap-logo.png'
+import pancakeSwapLogo from '../../public/images/pancake-swap-logo.png'
+import bitmartLogo from '../../public/images/bitmart-logo.png'
+import sokuSwapLogo from '../../public/images/soku-swap-logo.png'
 
 import ContrastButton from '../components/ContrastButton'
 import HeroHeader from '../components/HeroHeader'
