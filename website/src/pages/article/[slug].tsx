@@ -35,9 +35,7 @@ const Article: NextPage<ArticleProps> = ({ item, createdAt }) => {
           {item.title}
         </Typography>
 
-        <Box sx={{ maxHeight: 150, overflow: 'hidden', textOverflow: 'ellipsis', mb: 3 }}>
-          {documentToReactComponents(item.content)}
-        </Box>
+        {documentToReactComponents(item.content)}
       </Container>
     </Page>
   )
