@@ -204,7 +204,7 @@ const NFTs: NextPage = () => {
           <ImageList cols={getResponsiveCols()}>
             {itemData.map(item => (
               <ImageListItem key={item.img}>
-                <Image src={`${item.img}`} alt={item.title} loading="lazy" />
+                <Image src={`${item.img}`} alt={item.title} loading="lazy" height={256} width={256} />
               </ImageListItem>
             ))}
           </ImageList>
