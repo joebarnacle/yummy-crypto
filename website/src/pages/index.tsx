@@ -23,6 +23,7 @@ import pancakeSwapLogo from '../../public/images/pancake-swap-logo.png'
 import bitmartLogo from '../../public/images/bitmart-logo.png'
 import sokuSwapLogo from '../../public/images/soku-swap-logo.png'
 
+import YouTubeCard from '../components/YouTubeCard'
 import ContrastButton from '../components/ContrastButton'
 import HeroHeader from '../components/HeroHeader'
 import Page from '../components/Page'
@@ -30,6 +31,27 @@ import Page from '../components/Page'
 interface HomeProps {
   partners: any[]
 }
+
+// TODO: Move to contentful? Not sure how frequently this will change so easier to hardcode for now
+const highlightedVideos = [
+  {
+    videoId: 'ekfwTjTuI4U',
+    title: 'Yummy Staking Pools',
+    description:
+      'The video describes the NOVEL mechanism powering the Yummy Staking Pools. HIGHLY TECHNICAL and over 1 hour long so be sure to make yourself comfortable!',
+  },
+  {
+    videoId: 'iWmnuIrllC0',
+    title: 'NFT Launch Prep + General Crypto Talk',
+    description: 'Yummy NFTs coming Friday November 5th!!',
+  },
+  {
+    videoId: '9_VbPKRnPUg',
+    title: 'Yummy Crypto V2 Upgrade is coming!',
+    description:
+      'The Yummy Team is upgrading the contract! This will introduce many new developments that will benefit the token! Watch the video to get all the answers you need about this massive improvement!',
+  },
+]
 
 const Home: NextPage<HomeProps> = ({ partners }) => {
   const isDesktop = useMediaQuery(`@media (min-width:600px)`)
@@ -106,6 +128,28 @@ const Home: NextPage<HomeProps> = ({ partners }) => {
         </Container>
       </HeroHeader>
 
+      <section className="odd-section">
+        <Container>
+          <Typography variant="h4" gutterBottom textAlign={{ xs: 'center', md: 'left' }} sx={{ fontWeight: 600 }}>
+            Latest News
+          </Typography>
+          <Stack direction={{ md: 'row', xs: 'column' }} spacing={1}>
+            {highlightedVideos.map(video => (
+              <YouTubeCard
+                key={video.videoId}
+                videoId={video.videoId}
+                title={video.title}
+                description={video.description}
+              />
+            ))}
+          </Stack>
+          <Box display="flex" justifyContent="center" mt={5}>
+            <Button variant="outlined">
+              <RouterLink href="/news">Check out our official news articles</RouterLink>
+            </Button>
+          </Box>
+        </Container>
+      </section>
       <section>
         <Container>
           <Grid container spacing={8}>
