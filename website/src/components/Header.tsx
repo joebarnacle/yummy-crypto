@@ -125,6 +125,11 @@ const Header = () => {
               <ListItemText primary="NFTs" />
             </RouterLink>
           </ListItemButton>
+          <ListItemButton>
+            <RouterLink href="/news">
+              <ListItemText primary="News" />
+            </RouterLink>
+          </ListItemButton>
           <ListItem button component="a" href="https://yummycryptomerch.com/" target="_blank" rel="noopener">
             <ListItemText primary="Shop" />
           </ListItem>
