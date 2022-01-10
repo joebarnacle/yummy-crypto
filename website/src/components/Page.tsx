@@ -16,6 +16,11 @@ const Page: React.FC<PageProps> = ({ children, title }) => {
     <>
       <Head>
         <title>{title ? `${title} - ` : ''}Yummy Crypto</title>
+        <meta name="description" content="Returning value to holders via Growth Fund" />
+
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <Content>{children}</Content>
     </>
