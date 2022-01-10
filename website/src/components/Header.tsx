@@ -1,5 +1,8 @@
 import { useState } from 'react'
-import { Link as RouterLink } from 'react-router-dom'
+import Image from 'next/image'
+import RouterLink from 'next/link'
+
+import styled from '@emotion/styled'
 
 import AppBar from '@mui/material/AppBar'
 import Drawer from '@mui/material/Drawer'
@@ -10,19 +13,25 @@ import Divider from '@mui/material/Divider'
 import ListItem from '@mui/material/ListItem'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
+import ListItemButton from '@mui/material/ListItemButton'
+import Link from '@mui/material/Link'
 
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 
-import HomeIcon from '@mui/icons-material/Home'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 
 import Button from './ContrastButton'
 
 import yummyLogoLarge from '../../public/images/yummy-logo-large.svg'
-import pancakeSwapLogo from '../../public/images/partners/pancake-swap-logo.png'
-import bitmartLogo from '../../public/images/partners/bitmart-logo.png'
-import sokuSwapLogo from '../../public/images/partners/soku-swap-logo.png'
+import pancakeSwapLogo from '../../public/images/pancake-swap-logo.png'
+import bitmartLogo from '../../public/images/bitmart-logo.png'
+import sokuSwapLogo from '../../public/images/soku-swap-logo.png'
+
+const ConstrastImage = styled(Image)`
+  background: #01084a;
+  padding: 2px !important;
+`
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false)
@@ -43,9 +52,11 @@ const Header = () => {
       <AppBar position="sticky" elevation={0} sx={{ bgcolor: 'primary.main', p: 1, paddingBottom: 1 }}>
         <Toolbar id="back-to-top-anchor">
           <div style={{ flex: 1 }}>
-            <RouterLink to="/" style={{ display: 'flex' }}>
-              <img height={24} src={yummyLogoLarge} alt="yummy logo" />
-            </RouterLink>
+            <Link component={RouterLink} href="/" sx={{ display: 'flex' }}>
+              <a>
+                <Image height={24} src={yummyLogoLarge} alt="yummy logo" />
+              </a>
+            </Link>
           </div>
           <IconButton
             sx={{ display: { xs: 'block', md: 'none' } }}
@@ -58,34 +69,18 @@ const Header = () => {
             <MenuIcon />
           </IconButton>
           <Stack sx={{ display: { xs: 'none', md: 'flex' } }} direction="row" gap={3}>
-            <Button to="/" component={RouterLink} startIcon={<HomeIcon />}>
-              Home
-            </Button>
-            <Button to="/guides/how-to-buy" component={RouterLink}>
-              How to buy
-            </Button>
-            <Button
-              href="https://poocoin.app/tokens/0xb003c68917bab76812797d1b8056822f48e2e4fe"
-              component="a"
-              target="_blank"
-              rel="noopener"
-            >
-              Chart
-            </Button>
-            <Button
-              href="https://bscscan.com/address/0xB003C68917BaB76812797d1b8056822f48E2e4fe"
-              component="a"
-              target="_blank"
-              rel="noopener"
-            >
-              Contract
-            </Button>
-            <Button to="/community" component={RouterLink}>
-              Community
-            </Button>
-            <Button to="/nfts" component={RouterLink}>
-              NFTs
-            </Button>
+            <RouterLink href="/guides/how-to-buy">
+              <Button>How to buy</Button>
+            </RouterLink>
+            <RouterLink href="/community">
+              <Button>Community</Button>
+            </RouterLink>
+            <RouterLink href="/nfts">
+              <Button>NFTs</Button>
+            </RouterLink>
+            <RouterLink href="/news">
+              <Button>News</Button>
+            </RouterLink>
             <Button
               href="https://yummycryptomerch.com/"
               variant="outlined"
@@ -100,37 +95,42 @@ const Header = () => {
         </Toolbar>
       </AppBar>
       <Drawer anchor="top" open={drawerOpen} onClose={toggleDrawer(false)}>
-        <List>
-          <ListItem button component={RouterLink} to="/" onClick={toggleDrawer(false)}>
-            <ListItemText primary="Home" />
-          </ListItem>
-          <ListItem button component={RouterLink} to="/guides/how-to-buy" onClick={toggleDrawer(false)}>
-            <ListItemText primary="How to buy" />
-          </ListItem>
+        <List onClick={toggleDrawer(false)}>
+          <ListItemButton>
+            <RouterLink href="/">
+              <ListItemText primary="Home" />
+            </RouterLink>
+          </ListItemButton>
+          <ListItemButton>
+            <RouterLink href="/guides/how-to-buy">
+              <ListItemText primary="How to buy" />
+            </RouterLink>
+          </ListItemButton>
           <ListItem
             button
             component="a"
             href="https://bscscan.com/address/0xB003C68917BaB76812797d1b8056822f48E2e4fe"
             target="_blank"
             rel="noopener"
-            onClick={toggleDrawer(false)}
           >
             <ListItemText primary="Contract" />
           </ListItem>
-          <ListItem button component={RouterLink} to="/community" onClick={toggleDrawer(false)}>
-            <ListItemText primary="Community" />
-          </ListItem>
-          <ListItem button component={RouterLink} to="/nfts" onClick={toggleDrawer(false)}>
-            <ListItemText primary="NFTs" />
-          </ListItem>
-          <ListItem
-            button
-            component="a"
-            href="https://yummycryptomerch.com/"
-            target="_blank"
-            rel="noopener"
-            onClick={toggleDrawer(false)}
-          >
+          <ListItemButton>
+            <RouterLink href="/community">
+              <ListItemText primary="Community" />
+            </RouterLink>
+          </ListItemButton>
+          <ListItemButton>
+            <RouterLink href="/nfts">
+              <ListItemText primary="NFTs" />
+            </RouterLink>
+          </ListItemButton>
+          <ListItemButton>
+            <RouterLink href="/news">
+              <ListItemText primary="News" />
+            </RouterLink>
+          </ListItemButton>
+          <ListItem button component="a" href="https://yummycryptomerch.com/" target="_blank" rel="noopener">
             <ListItemText primary="Shop" />
           </ListItem>
           <Divider />
@@ -140,10 +140,9 @@ const Header = () => {
             href="https://www.bitmart.com/trade/en?symbol=YUMMY_USDT"
             target="_blank"
             rel="noopener"
-            onClick={toggleDrawer(false)}
           >
             <ListItemIcon>
-              <img width={24} src={pancakeSwapLogo} />
+              <Image alt="pancake swap logo" height={24} width={24} src={pancakeSwapLogo} />
             </ListItemIcon>
             <ListItemText primary="Buy on PancakeSwap" />
           </ListItem>
@@ -153,10 +152,9 @@ const Header = () => {
             href="https://www.bitmart.com/trade/en?symbol=YUMMY_USDT"
             target="_blank"
             rel="noopener"
-            onClick={toggleDrawer(false)}
           >
             <ListItemIcon>
-              <img width={24} src={bitmartLogo} />
+              <Image alt="bitmart logo" height={24} width={24} src={bitmartLogo} />
             </ListItemIcon>
             <ListItemText primary="Buy on Bitmart" />
           </ListItem>
@@ -166,10 +164,9 @@ const Header = () => {
             href="https://www.bitmart.com/trade/en?symbol=YUMMY_USDT"
             target="_blank"
             rel="noopener"
-            onClick={toggleDrawer(false)}
           >
             <ListItemIcon>
-              <img width={24} src={sokuSwapLogo} style={{ background: '#01084a', padding: 2 }} />
+              <ConstrastImage alt="soku swap logo" height={24} width={24} src={sokuSwapLogo} />
             </ListItemIcon>
             <ListItemText primary="Buy on SokuSwap" />
           </ListItem>

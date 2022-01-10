@@ -1,3 +1,5 @@
+import type { NextPage } from 'next'
+
 import Alert from '@mui/material/Alert'
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
@@ -24,7 +26,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 
 import Page from '../components/Page'
 
-const Community = () => {
+const Community: NextPage = () => {
   return (
     <Page title="Community">
       <Container sx={{ mt: { xs: 4, md: 10 } }}>
@@ -32,7 +34,7 @@ const Community = () => {
           Join our community!
         </Typography>
         <Typography textAlign="center" variant="body2" gutterBottom>
-          Below you'll find a list of all the places you can find and interact with the Yummy community.
+          Below you&apos;ll find a list of all the places you can find and interact with the Yummy community.
         </Typography>
 
         <Stack sx={{ mt: { xs: 2, md: 5 }, mb: 2 }} direction={{ xs: 'column', md: 'row' }} gap={2}>

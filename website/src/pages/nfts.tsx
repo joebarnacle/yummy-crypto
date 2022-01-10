@@ -1,3 +1,6 @@
+import type { NextPage } from 'next'
+import Image from 'next/image'
+
 import Alert from '@mui/material/Alert'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -24,7 +27,7 @@ const itemData = Array(8)
     title: `NFT preview ${index + 1}`,
   }))
 
-const NFTs = () => {
+const NFTs: NextPage = () => {
   const sm = useMediaQuery(`@media (min-width:600px)`)
   const md = useMediaQuery(`@media (min-width:900px)`)
 
@@ -201,7 +204,7 @@ const NFTs = () => {
           <ImageList cols={getResponsiveCols()}>
             {itemData.map(item => (
               <ImageListItem key={item.img}>
-                <img src={`${item.img}`} alt={item.title} loading="lazy" />
+                <Image src={`${item.img}`} alt={item.title} loading="lazy" height={256} width={256} />
               </ImageListItem>
             ))}
           </ImageList>

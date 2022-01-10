@@ -1,4 +1,9 @@
-import { Link as RouterLink } from 'react-router-dom'
+import type { NextPage, GetStaticProps } from 'next'
+import RouterLink from 'next/link'
+import Image from 'next/image'
+
+import { createClient } from 'contentful'
+
 import CountUp from 'react-countup'
 
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -14,17 +19,41 @@ import ImageList from '@mui/material/ImageList'
 import ImageListItem from '@mui/material/ImageListItem'
 
 import yummyLogo from '../../public/images/yummy-logo-small.svg'
-import pancakeSwapLogo from '../../public/images/partners/pancake-swap-logo.png'
-import bitmartLogo from '../../public/images/partners/bitmart-logo.png'
-import sokuSwapLogo from '../../public/images/partners/soku-swap-logo.png'
+import pancakeSwapLogo from '../../public/images/pancake-swap-logo.png'
+import bitmartLogo from '../../public/images/bitmart-logo.png'
+import sokuSwapLogo from '../../public/images/soku-swap-logo.png'
 
-import { partnersData } from '../data/partners'
-
-import Page from '../components/Page'
+import YouTubeCard from '../components/YouTubeCard'
 import ContrastButton from '../components/ContrastButton'
 import HeroHeader from '../components/HeroHeader'
+import Page from '../components/Page'
 
-const Home = () => {
+interface HomeProps {
+  partners: any[]
+}
+
+// TODO: Move to contentful? Not sure how frequently this will change so easier to hardcode for now
+const highlightedVideos = [
+  {
+    videoId: 'ekfwTjTuI4U',
+    title: 'Yummy Staking Pools',
+    description:
+      'The video describes the NOVEL mechanism powering the Yummy Staking Pools. HIGHLY TECHNICAL and over 1 hour long so be sure to make yourself comfortable!',
+  },
+  {
+    videoId: 'iWmnuIrllC0',
+    title: 'NFT Launch Prep + General Crypto Talk',
+    description: 'Yummy NFTs coming Friday November 5th!!',
+  },
+  {
+    videoId: '9_VbPKRnPUg',
+    title: 'Yummy Crypto V2 Upgrade is coming!',
+    description:
+      'The Yummy Team is upgrading the contract! This will introduce many new developments that will benefit the token! Watch the video to get all the answers you need about this massive improvement!',
+  },
+]
+
+const Home: NextPage<HomeProps> = ({ partners }) => {
   const isDesktop = useMediaQuery(`@media (min-width:600px)`)
 
   return (
@@ -35,24 +64,18 @@ const Home = () => {
             <Grid item xs={12} md={8} sx={{ textAlign: { xs: 'center', md: 'left' } }}>
               <Box mb={3}>
                 <Typography sx={{ fontSize: { xs: '2.2rem', md: '3rem' } }} variant="h3">
-                  Together we're <strong>changing lives</strong> across the globe
+                  Together we&apos;re <strong>changing lives</strong> across the globe
                 </Typography>
               </Box>
               <Typography variant="subtitle2">
                 Yummy Crypto is a project launched on May 1st with a clear vision to deliver value to holders via{' '}
-                <strong>Growth Fund</strong> while providing contributions to help solve some of the world's most
+                <strong>Growth Fund</strong> while providing contributions to help solve some of the world&apos;s most
                 pressing issues.
               </Typography>
               <Box mt={4}>
                 <Stack direction={{ xs: 'column', md: 'row' }} gap={2}>
-                  <Button
-                    disableElevation
-                    component={RouterLink}
-                    variant="contained"
-                    sx={{ bgcolor: 'secondary.main' }}
-                    to="/guides/how-to-buy"
-                  >
-                    How to Buy
+                  <Button disableElevation variant="contained" sx={{ bgcolor: 'secondary.main' }}>
+                    <RouterLink href="/guides/how-to-buy">How to Buy</RouterLink>
                   </Button>
                   <ContrastButton
                     component="a"
@@ -73,7 +96,7 @@ const Home = () => {
                   href="https://pancakeswap.finance/swap?outputCurrency=0xb003c68917bab76812797d1b8056822f48e2e4fe"
                   target="_blank"
                   rel="noopener"
-                  startIcon={<img width={24} height={24} alt="pancake swap logo" src={pancakeSwapLogo} />}
+                  startIcon={<Image width={24} height={24} alt="pancake swap logo" src={pancakeSwapLogo} />}
                   sx={{ justifyContent: 'flex-start' }}
                 >
                   Buy on PancakeSwap
@@ -83,7 +106,7 @@ const Home = () => {
                   href="https://www.bitmart.com/trade/en?symbol=YUMMY_USDT"
                   target="_blank"
                   rel="noopener"
-                  startIcon={<img width={24} height={24} alt="bitmart logo" src={bitmartLogo} />}
+                  startIcon={<Image width={24} height={24} alt="bitmart logo" src={bitmartLogo} />}
                   sx={{ justifyContent: 'flex-start' }}
                 >
                   Buy on Bitmart
@@ -94,7 +117,7 @@ const Home = () => {
                   href="https://app.sokuswap.finance/bsc/#/swap?inputCurrency=0xB8c77482e45F1F44dE1745F52C74426C631bDD52?&outputCurrency=0xB003C68917BaB76812797d1b8056822f48E2e4fe"
                   target="_blank"
                   rel="noopener"
-                  startIcon={<img width={24} height={24} alt="soku swap logo" src={sokuSwapLogo} />}
+                  startIcon={<Image width={24} height={24} alt="soku swap logo" src={sokuSwapLogo} />}
                   sx={{ justifyContent: 'flex-start' }}
                 >
                   Buy on SokuSwap
@@ -105,6 +128,28 @@ const Home = () => {
         </Container>
       </HeroHeader>
 
+      <section className="odd-section">
+        <Container>
+          <Typography variant="h4" gutterBottom textAlign={{ xs: 'center', md: 'left' }} sx={{ fontWeight: 600 }}>
+            Latest News
+          </Typography>
+          <Stack direction={{ md: 'row', xs: 'column' }} spacing={1}>
+            {highlightedVideos.map(video => (
+              <YouTubeCard
+                key={video.videoId}
+                videoId={video.videoId}
+                title={video.title}
+                description={video.description}
+              />
+            ))}
+          </Stack>
+          <Box display="flex" justifyContent="center" mt={5}>
+            <Button variant="outlined">
+              <RouterLink href="/news">Check out our official news articles</RouterLink>
+            </Button>
+          </Box>
+        </Container>
+      </section>
       <section>
         <Container>
           <Grid container spacing={8}>
@@ -114,20 +159,26 @@ const Home = () => {
               </Typography>
               <Stack spacing={3}>
                 <Typography>
-                  Within our short history, we've already donated over $1.1M, and 35% of the total token supply has been
-                  burned as a method to return value to our holders. And that's just the start of it!
+                  Within our short history, we&apos;ve already donated over $1.1M, and 35% of the total token supply has
+                  been burned as a method to return value to our holders. And that&apos;s just the start of it!
                 </Typography>
                 <Typography>
-                  We recently introduced our <strong>Growth Fund</strong> to further maximize Yummy holders' returns
-                  through daily buybacks and burns. In addition, we have secured partnerships with prominent industry
-                  players such as Bare Knuckle FC to further advance our social exposure within the crypto space and
-                  have much more in the works!
+                  We recently introduced our <strong>Growth Fund</strong> to further maximize Yummy holders&apos;
+                  returns through daily buybacks and burns. In addition, we have secured partnerships with prominent
+                  industry players such as Bare Knuckle FC to further advance our social exposure within the crypto
+                  space and have much more in the works!
                 </Typography>
               </Stack>
             </Grid>
             <Grid item xs={12} md={6}>
               <Box display="flex" justifyContent="center">
-                <img className="floating-image" height={isDesktop ? 256 : 156} src={yummyLogo} alt="yummy logo" />
+                <Image
+                  className="floating-image"
+                  height={isDesktop ? 256 : 156}
+                  width={isDesktop ? 256 : 156}
+                  src={yummyLogo}
+                  alt="yummy logo"
+                />
               </Box>
             </Grid>
           </Grid>
@@ -142,7 +193,13 @@ const Home = () => {
               </Typography>
               <Typography
                 variant="h5"
-                sx={{ borderBottom: '5px solid', borderBottomColor: 'primary.main', borderRadius: 3, mb: 1, pb: 1 }}
+                sx={{
+                  borderBottom: '5px solid',
+                  borderBottomColor: 'primary.main',
+                  borderRadius: 3,
+                  mb: 1,
+                  pb: 1,
+                }}
               >
                 DONATED
               </Typography>
@@ -155,7 +212,13 @@ const Home = () => {
               </Typography>
               <Typography
                 variant="h5"
-                sx={{ borderBottom: '5px solid', borderBottomColor: 'primary.main', borderRadius: 3, mb: 1, pb: 1 }}
+                sx={{
+                  borderBottom: '5px solid',
+                  borderBottomColor: 'primary.main',
+                  borderRadius: 3,
+                  mb: 1,
+                  pb: 1,
+                }}
               >
                 GROWTH FUND
               </Typography>
@@ -208,7 +271,7 @@ const Home = () => {
             </Grid>
             <Grid item xs={12} md={4}>
               <Box display="flex" justifyContent="center">
-                <img className="floating-image" height={256} src="/images/sprout.png" alt="yummy logo" />
+                <Image className="floating-image" width={125} height={220} src="/images/sprout.png" alt="yummy logo" />
               </Box>
             </Grid>
           </Grid>
@@ -221,11 +284,11 @@ const Home = () => {
           </Typography>
           <Paper sx={{ p: { xs: 0, md: 2 } }} variant={isDesktop ? 'outlined' : undefined} elevation={0}>
             <ImageList cols={isDesktop ? 8 : 2} gap={isDesktop ? 8 : 0} sx={{ m: 0 }}>
-              {partnersData.map(({ href, imgSrc, imgAlt, background }) => (
+              {partners.map(partner => (
                 <ImageListItem
-                  key={href}
+                  key={partner.fields.href}
                   component="a"
-                  href={href}
+                  href={partner.fields.href}
                   target="_blank"
                   rel="noopener"
                   sx={{
@@ -235,18 +298,21 @@ const Home = () => {
                     },
                   }}
                 >
-                  <img
+                  <Box
                     style={{
                       padding: 12,
-                      backgroundColor: background ?? undefined,
-                      objectFit: 'contain',
+                      backgroundColor: partner.fields.backgroundColor ?? undefined,
                     }}
-                    src={imgSrc}
-                    alt={imgAlt}
-                    width={132}
-                    height={132}
-                    loading="lazy"
-                  />
+                  >
+                    <Image
+                      objectFit="contain"
+                      src={`https:${partner.fields.logo.fields.file.url}`}
+                      alt={partner.fields.name}
+                      width={132}
+                      height={132}
+                      loading="lazy"
+                    />
+                  </Box>
                 </ImageListItem>
               ))}
             </ImageList>
@@ -255,6 +321,21 @@ const Home = () => {
       </section>
     </Page>
   )
+}
+
+const client = createClient({
+  space: process.env.CONTENTFUL_SPACE_ID || '',
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
+})
+
+export const getStaticProps: GetStaticProps = async () => {
+  const partners = await client.getEntries({ content_type: 'partner' })
+
+  return {
+    props: {
+      partners: partners.items,
+    },
+  }
 }
 
 export default Home

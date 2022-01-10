@@ -7,7 +7,7 @@
 
 <!-- [END badges] -->
 
-Visit the website at [https://yummy-crypto.com/](https://yummy-crypto.com/)
+Visit the official website at [https://yummy-crypto.com/](https://yummy-crypto.com/)
 
 ## Getting started
 

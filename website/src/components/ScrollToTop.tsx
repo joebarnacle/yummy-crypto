@@ -1,7 +1,7 @@
+import React from 'react'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
 import Box from '@mui/material/Box'
 import Zoom from '@mui/material/Zoom'
-import React from 'react'
 
 const ScrollToTop: React.FC = ({ children }) => {
   const trigger = useScrollTrigger({
