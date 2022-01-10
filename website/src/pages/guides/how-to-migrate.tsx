@@ -48,7 +48,7 @@ const steps: StepsProps['steps'] = [
   },
 ]
 
-const HowToMigrate: NextPage = () => {
+const HowToMigratePage: NextPage = () => {
   return (
     <Page title="Guides | How to migrate">
       <Container sx={{ mt: { xs: 2, md: 5 } }}>
@@ -79,4 +79,4 @@ const HowToMigrate: NextPage = () => {
   )
 }
 
-export default HowToMigrate
+export default HowToMigratePage

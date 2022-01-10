@@ -27,7 +27,7 @@ const itemData = Array(8)
     title: `NFT preview ${index + 1}`,
   }))
 
-const NFTs: NextPage = () => {
+const NftsPage: NextPage = () => {
   const sm = useMediaQuery(`@media (min-width:600px)`)
   const md = useMediaQuery(`@media (min-width:900px)`)
 
@@ -214,4 +214,4 @@ const NFTs: NextPage = () => {
   )
 }
 
-export default NFTs
+export default NftsPage

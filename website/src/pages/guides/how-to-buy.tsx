@@ -50,7 +50,7 @@ const steps: StepsProps['steps'] = [
   },
 ]
 
-const HowToBuy: NextPage = () => {
+const HowToBuyPage: NextPage = () => {
   return (
     <Page title="Guides | How to buy">
       <Container sx={{ mt: { xs: 4, md: 10 } }}>
@@ -81,4 +81,4 @@ const HowToBuy: NextPage = () => {
   )
 }
 
-export default HowToBuy
+export default HowToBuyPage

@@ -1,6 +1,5 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from 'next'
 
-import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import Box from '@mui/material/Box'
@@ -11,20 +10,16 @@ import Typography from '@mui/material/Typography'
 import Page from '../../components/Page'
 
 import { formatDate } from '../../utils'
+import contentfulClient from '../../lib/ContentfulClient'
 
-interface Article {
-  title: string
-  slug: string
-  content: any
-  author: any
-}
+import { Article } from '../../interfaces'
 
-interface ArticleProps {
+interface ArticlePageProps {
   item: Article
   createdAt: string
 }
 
-const Article: NextPage<ArticleProps> = ({ item, createdAt }) => {
+const ArticlePage: NextPage<ArticlePageProps> = ({ item, createdAt }) => {
   return (
     <Page title={item.title}>
       <Container sx={{ mt: { xs: 4, md: 10 }, mb: 5 }}>
@@ -41,13 +36,8 @@ const Article: NextPage<ArticleProps> = ({ item, createdAt }) => {
   )
 }
 
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || '',
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
-})
-
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { items } = await client.getEntries<Article>({
+  const { items } = await contentfulClient.getEntries<Article>({
     content_type: 'news-item',
     'fields.slug': params?.slug,
   })
@@ -61,7 +51,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { items } = await client.getEntries<Article>({
+  const { items } = await contentfulClient.getEntries<Article>({
     content_type: 'news-item',
   })
 
@@ -79,4 +69,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export default Article
+export default ArticlePage

@@ -13,12 +13,12 @@ interface YouTubeProps {
   videoId: string
   title: string
   description: string
+  shareUrl: string
 }
 
-const YouTubeCard = ({ videoId, title, description }: YouTubeProps) => {
+const YouTubeCard = ({ videoId, title, description, shareUrl }: YouTubeProps) => {
   const { enqueueSnackbar } = useSnackbar()
 
-  const url = `https://www.youtube.com/watch?v=${videoId}`
   return (
     <Card sx={{ display: 'flex', flexDirection: 'column', maxWidth: 345 }}>
       <CardMedia
@@ -44,14 +44,14 @@ const YouTubeCard = ({ videoId, title, description }: YouTubeProps) => {
       <CardActions>
         <Button
           onClick={() => {
-            copyToClipboard(url)
+            copyToClipboard(shareUrl)
             enqueueSnackbar('URL copied', { variant: 'success' })
           }}
           size="small"
         >
           Share
         </Button>
-        <Button href={url} size="small" target="_blank" rel="noopener">
+        <Button href={shareUrl} size="small" target="_blank" rel="noopener">
           Learn More
         </Button>
       </CardActions>

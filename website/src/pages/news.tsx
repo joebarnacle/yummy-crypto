@@ -1,7 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next'
 import RouterLink from 'next/link'
 
-import { createClient } from 'contentful'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import Box from '@mui/material/Box'
@@ -12,11 +11,13 @@ import Typography from '@mui/material/Typography'
 import Page from '../components/Page'
 import { formatDate } from '../utils'
 
-interface NewsProps {
+import contentfulClient from '../lib/ContentfulClient'
+
+interface NewsPageProps {
   items: any[]
 }
 
-const News: NextPage<NewsProps> = ({ items }) => {
+const NewsPage: NextPage<NewsPageProps> = ({ items }) => {
   return (
     <Page title="News">
       <Container>
@@ -42,13 +43,8 @@ const News: NextPage<NewsProps> = ({ items }) => {
   )
 }
 
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || '',
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
-})
-
 export const getStaticProps: GetStaticProps = async () => {
-  const { items } = await client.getEntries({
+  const { items } = await contentfulClient.getEntries({
     content_type: 'news-item',
     limit: 10,
     include: 10,
@@ -61,4 +57,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default News
+export default NewsPage

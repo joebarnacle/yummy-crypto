@@ -26,7 +26,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 
 import Page from '../components/Page'
 
-const Community: NextPage = () => {
+const CommunityPage: NextPage = () => {
   return (
     <Page title="Community">
       <Container sx={{ mt: { xs: 4, md: 10 } }}>
@@ -167,4 +167,4 @@ const Community: NextPage = () => {
   )
 }
 
-export default Community
+export default CommunityPage

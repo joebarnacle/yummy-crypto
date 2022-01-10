@@ -2,8 +2,6 @@ import type { NextPage, GetStaticProps } from 'next'
 import RouterLink from 'next/link'
 import Image from 'next/image'
 
-import { createClient } from 'contentful'
-
 import CountUp from 'react-countup'
 
 import useMediaQuery from '@mui/material/useMediaQuery'
@@ -28,32 +26,16 @@ import ContrastButton from '../components/ContrastButton'
 import HeroHeader from '../components/HeroHeader'
 import Page from '../components/Page'
 
-interface HomeProps {
+import contentfulClient from '../lib/ContentfulClient'
+
+import { FeaturedNewsItem, Partner } from '../interfaces'
+
+interface HomePageProps {
   partners: any[]
+  featuredNewsItems: any[]
 }
 
-// TODO: Move to contentful? Not sure how frequently this will change so easier to hardcode for now
-const highlightedVideos = [
-  {
-    videoId: 'ekfwTjTuI4U',
-    title: 'Yummy Staking Pools',
-    description:
-      'The video describes the NOVEL mechanism powering the Yummy Staking Pools. HIGHLY TECHNICAL and over 1 hour long so be sure to make yourself comfortable!',
-  },
-  {
-    videoId: 'iWmnuIrllC0',
-    title: 'NFT Launch Prep + General Crypto Talk',
-    description: 'Yummy NFTs coming Friday November 5th!!',
-  },
-  {
-    videoId: '9_VbPKRnPUg',
-    title: 'Yummy Crypto V2 Upgrade is coming!',
-    description:
-      'The Yummy Team is upgrading the contract! This will introduce many new developments that will benefit the token! Watch the video to get all the answers you need about this massive improvement!',
-  },
-]
-
-const Home: NextPage<HomeProps> = ({ partners }) => {
+const HomePage: NextPage<HomePageProps> = ({ featuredNewsItems, partners }) => {
   const isDesktop = useMediaQuery(`@media (min-width:600px)`)
 
   return (
@@ -134,12 +116,13 @@ const Home: NextPage<HomeProps> = ({ partners }) => {
             Latest News
           </Typography>
           <Stack direction={{ md: 'row', xs: 'column' }} spacing={1}>
-            {highlightedVideos.map(video => (
+            {featuredNewsItems.map(item => (
               <YouTubeCard
-                key={video.videoId}
-                videoId={video.videoId}
-                title={video.title}
-                description={video.description}
+                key={item.fields.youTubeVideoId}
+                videoId={item.fields.youTubeVideoId}
+                title={item.fields.title}
+                description={item.fields.description}
+                shareUrl={item.fields.shareUrl}
               />
             ))}
           </Stack>
@@ -323,19 +306,21 @@ const Home: NextPage<HomeProps> = ({ partners }) => {
   )
 }
 
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || '',
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || '',
-})
-
 export const getStaticProps: GetStaticProps = async () => {
-  const partners = await client.getEntries({ content_type: 'partner' })
+  const partners = await contentfulClient.getEntries<Partner>({ content_type: 'partner' })
+  const featuredNewsItems = await contentfulClient.getEntries<FeaturedNewsItem>({
+    content_type: 'featured-news-item',
+    limit: 3,
+  })
+
+  console.log(featuredNewsItems)
 
   return {
     props: {
       partners: partners.items,
+      featuredNewsItems: featuredNewsItems.items,
     },
   }
 }
 
-export default Home
+export default HomePage

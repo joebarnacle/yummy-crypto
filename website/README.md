@@ -15,9 +15,14 @@ Built with:
 
 - React
 - Material UI
-- Vitejs
+- NextJs
+- Contentful
 
 ### How to use
+
+1. Ensure you have API keys for the Contentful space
+2. Create a `.env.local` file using `.env.example` as a template using the keys from step 1
+3. Build and run the project
 
 ```sh
 yarn install
