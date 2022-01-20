@@ -1,0 +1,3866 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "news-item",
+        "type": "ContentType",
+        "createdAt": "2022-01-08T08:24:29.550Z",
+        "updatedAt": "2022-01-09T13:58:05.824Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 19,
+        "publishedAt": "2022-01-09T13:58:05.824Z",
+        "firstPublishedAt": "2022-01-08T08:24:29.998Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 10,
+        "version": 20,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Article",
+      "description": "An item describing either a new update or news article",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "type": "RichText",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "embedded-entry-inline"
+              ]
+            },
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "author",
+          "name": "Author",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkContentType": [
+                "author"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "partner",
+        "type": "ContentType",
+        "createdAt": "2022-01-09T11:07:04.200Z",
+        "updatedAt": "2022-01-09T11:16:14.197Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2022-01-09T11:16:14.197Z",
+        "firstPublishedAt": "2022-01-09T11:07:04.594Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "displayField": "href",
+      "name": "Partner",
+      "description": "",
+      "fields": [
+        {
+          "id": "name",
+          "name": "name",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "href",
+          "name": "href",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "logo",
+          "name": "logo",
+          "type": "Link",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "backgroundColor",
+          "name": "backgroundColor",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "author",
+        "type": "ContentType",
+        "createdAt": "2022-01-09T12:22:00.005Z",
+        "updatedAt": "2022-01-09T12:22:00.639Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2022-01-09T12:22:00.639Z",
+        "firstPublishedAt": "2022-01-09T12:22:00.639Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Author",
+      "description": "",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "avatar",
+          "name": "Avatar",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "featured-news-item",
+        "type": "ContentType",
+        "createdAt": "2022-01-10T16:26:06.618Z",
+        "updatedAt": "2022-01-10T16:29:29.462Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2022-01-10T16:29:29.462Z",
+        "firstPublishedAt": "2022-01-10T16:26:06.955Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Featured News Item",
+      "description": "",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "youTubeVideoId",
+          "name": "YouTube Video ID",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "shareUrl",
+          "name": "Share URL",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "tags": [
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "c3il6u0f7gb2",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 20,
+        "createdAt": "2022-01-08T08:24:30.051Z",
+        "createdBy": {
+          "sys": {
+            "id": "6JKqDh3RTzzhVVBUcP2n4n",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-01-09T13:58:06.363Z",
+        "updatedBy": {
+          "sys": {
+            "id": "6JKqDh3RTzzhVVBUcP2n4n",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "news-item",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "content",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "author",
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "c3il6u0f7gb2",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 6,
+        "createdAt": "2022-01-09T11:07:04.634Z",
+        "createdBy": {
+          "sys": {
+            "id": "6JKqDh3RTzzhVVBUcP2n4n",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-01-09T11:16:14.627Z",
+        "updatedBy": {
+          "sys": {
+            "id": "6JKqDh3RTzzhVVBUcP2n4n",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "partner",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "href",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "logo",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "backgroundColor",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "c3il6u0f7gb2",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2022-01-09T12:22:00.688Z",
+        "createdBy": {
+          "sys": {
+            "id": "6JKqDh3RTzzhVVBUcP2n4n",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-01-09T12:22:01.189Z",
+        "updatedBy": {
+          "sys": {
+            "id": "6JKqDh3RTzzhVVBUcP2n4n",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "author",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "avatar",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "c3il6u0f7gb2",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 8,
+        "createdAt": "2022-01-10T16:26:07.058Z",
+        "createdBy": {
+          "sys": {
+            "id": "6JKqDh3RTzzhVVBUcP2n4n",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-01-10T16:29:29.992Z",
+        "updatedBy": {
+          "sys": {
+            "id": "6JKqDh3RTzzhVVBUcP2n4n",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "featured-news-item",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "youTubeVideoId",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "description",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "shareUrl",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "11eHYlHfLD0uhJIwdZCyCr",
+        "type": "Entry",
+        "createdAt": "2022-01-08T08:24:37.820Z",
+        "updatedAt": "2022-01-09T14:03:02.178Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 15,
+        "publishedAt": "2022-01-09T14:03:02.178Z",
+        "firstPublishedAt": "2022-01-08T08:24:52.261Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 5,
+        "version": 16,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "news-item"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Hello World"
+        },
+        "slug": {
+          "en-US": "hello-world"
+        },
+        "content": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "This is my first news article",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "author": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "4j7DNeenmzZgcRFU0yF2Ci"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "7aXn0ySoyzxmwCl9nbzqja",
+        "type": "Entry",
+        "createdAt": "2022-01-09T11:07:17.701Z",
+        "updatedAt": "2022-01-09T11:08:12.649Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-09T11:08:12.649Z",
+        "firstPublishedAt": "2022-01-09T11:08:12.649Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "27fXnflC3bWKowlBDbKPP0"
+            }
+          }
+        },
+        "href": {
+          "en-US": "https://www.bareknuckle.tv/"
+        },
+        "name": {
+          "en-US": "Bare Knuckle Fighting"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "3tcG3jYJxFBcD6ffO7ICcZ",
+        "type": "Entry",
+        "createdAt": "2022-01-09T11:30:25.349Z",
+        "updatedAt": "2022-01-09T11:31:24.484Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-09T11:31:24.484Z",
+        "firstPublishedAt": "2022-01-09T11:31:24.484Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Soku Swap"
+        },
+        "href": {
+          "en-US": "https://www.sokuswap.org/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "juNWHiwDFm5fBkpHl55HW"
+            }
+          }
+        },
+        "backgroundColor": {
+          "en-US": "#01084a"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "4j7DNeenmzZgcRFU0yF2Ci",
+        "type": "Entry",
+        "createdAt": "2022-01-09T12:22:07.486Z",
+        "updatedAt": "2022-01-09T12:25:41.501Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T12:25:41.501Z",
+        "firstPublishedAt": "2022-01-09T12:25:41.501Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "author"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Michael"
+        },
+        "avatar": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "565GQZl1M1OvN6BS8Ceqf2"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "6UU0neBFirAuA7mW4BzHSc",
+        "type": "Entry",
+        "createdAt": "2022-01-09T12:37:20.161Z",
+        "updatedAt": "2022-01-09T14:03:06.313Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2022-01-09T14:03:06.313Z",
+        "firstPublishedAt": "2022-01-09T12:37:51.695Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "news-item"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Another news article"
+        },
+        "content": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in tortor eu justo eleifend ultrices. Duis justo odio, fringilla vel arcu quis, vehicula mollis quam. Aliquam dignissim magna vitae leo aliquam, non laoreet ante scelerisque. Ut feugiat placerat tellus, quis vehicula dolor laoreet id. Ut sit amet lorem et turpis luctus accumsan. Morbi lacinia tellus massa, ac elementum erat sollicitudin ac. Integer mollis lobortis congue.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Sed auctor nibh nibh, vel malesuada magna pellentesque sed. Donec lectus nunc, tincidunt a nisl at, ornare viverra felis. Praesent vel odio dapibus, viverra arcu eget, volutpat lacus. Vivamus neque velit, faucibus sed orci vel, molestie pretium turpis. Sed rhoncus libero neque, ut dignissim lectus blandit eu. Praesent vehicula fermentum mauris, et convallis sem cursus in. Vestibulum semper fermentum cursus. Phasellus vitae erat mollis, hendrerit nibh a, pharetra augue. Nam elit metus, ullamcorper semper sodales vitae, consectetur in magna. Donec ac luctus lectus. Fusce ultrices quam a elementum euismod. Integer quis dapibus mauris. Ut eleifend pharetra dolor id cursus. Phasellus finibus, felis dapibus sollicitudin faucibus, nulla nibh pellentesque orci, eu tempor neque felis vitae risus.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Aenean semper felis at purus finibus iaculis. Integer maximus auctor risus, vitae laoreet ligula fringilla sed. Aenean a maximus tellus. Aliquam finibus, dolor gravida porttitor lobortis, tortor nisi gravida ipsum, et scelerisque arcu justo ullamcorper orci. Nullam fringilla ipsum sed magna congue consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi bibendum, ex eget faucibus tempus, lacus lacus sodales lorem, id tincidunt erat ex sed leo. Ut ut facilisis felis. Nunc cursus mi vitae egestas dictum. Duis posuere orci metus, vel mollis metus eleifend eu.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Nulla porttitor tortor sed ante vestibulum blandit fringilla iaculis turpis. Donec facilisis massa tellus, quis mattis justo gravida nec. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras nisi risus, ornare quis nibh sed, viverra rutrum est. Suspendisse vestibulum posuere velit, quis egestas mauris egestas non. Pellentesque interdum in risus porta porta. In at efficitur nibh, eget suscipit massa. Fusce quis tempor est. Sed ultrices dictum felis. Praesent bibendum eros vitae mauris semper, et posuere risus malesuada. Cras fringilla dictum erat. Vestibulum felis mi, vehicula ac luctus ac, fermentum sit amet purus. Quisque eleifend sapien eu tellus dapibus accumsan. Etiam non ex arcu.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "Donec fringilla quis massa placerat facilisis. Sed sollicitudin lorem sed turpis fermentum, eleifend imperdiet ex venenatis. Duis elementum placerat nunc, at consectetur tellus egestas sit amet. Nullam risus neque, euismod ac mi sed, bibendum placerat est. Etiam nisl quam, elementum malesuada risus at, ullamcorper ullamcorper diam. Phasellus vitae nibh fermentum, congue diam sed, euismod sem. Etiam dui justo, vehicula a risus quis, posuere vestibulum mauris. In bibendum felis quis ipsum dignissim suscipit.",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "\n\n",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "author": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "4j7DNeenmzZgcRFU0yF2Ci"
+            }
+          }
+        },
+        "slug": {
+          "en-US": "another-news-article"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "4wh6RRSK9Y3AvTNgVHYSmm",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:10:07.949Z",
+        "updatedAt": "2022-01-09T13:16:07.737Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:16:07.737Z",
+        "firstPublishedAt": "2022-01-09T13:16:07.737Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Pancake Swap"
+        },
+        "href": {
+          "en-US": "https://pancakeswap.finance/swap"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "dwqbTvnHxcVdOedQai1q0"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "45eJrqt8sZB9g2qTrjfLjR",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:11:58.371Z",
+        "updatedAt": "2022-01-09T13:16:07.724Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-09T13:16:07.724Z",
+        "firstPublishedAt": "2022-01-09T13:16:07.724Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Dreamfield"
+        },
+        "href": {
+          "en-US": "https://www.dreamfield.co/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5q35i7RqxST6IAnffZL7QE"
+            }
+          }
+        },
+        "backgroundColor": {
+          "en-US": "rgb(19,19,19)"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "LpUtYxp707cYkQr69Botk",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:12:27.187Z",
+        "updatedAt": "2022-01-09T13:16:06.722Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:16:06.722Z",
+        "firstPublishedAt": "2022-01-09T13:16:06.722Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Slam Token"
+        },
+        "href": {
+          "en-US": "https://slamtoken.com/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5wBMOlWyzwP4DltYwfKILf"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "5HNoh1zPFrL6yY7LxML4Lq",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:12:44.017Z",
+        "updatedAt": "2022-01-09T13:16:06.719Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:16:06.719Z",
+        "firstPublishedAt": "2022-01-09T13:16:06.719Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Bitmart"
+        },
+        "href": {
+          "en-US": "https://www.bitmart.com/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "oYPYJMZhXKKt04ye2xReS"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "2tbVvwSOSp69Yw26McuTRD",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:12:59.836Z",
+        "updatedAt": "2022-01-09T13:16:06.742Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:16:06.742Z",
+        "firstPublishedAt": "2022-01-09T13:16:06.742Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Binance Charity"
+        },
+        "href": {
+          "en-US": "https://www.binance.charity/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "671Uxr9LkYjaIZSepJPn99"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "RZVkiwN9QMBeRgYQhqJYO",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:13:16.704Z",
+        "updatedAt": "2022-01-09T13:16:06.729Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:16:06.729Z",
+        "firstPublishedAt": "2022-01-09T13:16:06.729Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Marina Dalglish Appeal"
+        },
+        "href": {
+          "en-US": "https://marinadalglishappeal.org/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5l9hvI6Qcx7TmRSOlofndc"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "4cz0m746rtEYEuIC7sreLl",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:13:37.644Z",
+        "updatedAt": "2022-01-09T13:16:06.737Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:16:06.737Z",
+        "firstPublishedAt": "2022-01-09T13:16:06.737Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Sorai"
+        },
+        "href": {
+          "en-US": "https://oursorai.com/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "kGr35UX1OLnLhPCKjWIey"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "6zfrStP3WYRo45cbqAHpkR",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:13:54.376Z",
+        "updatedAt": "2022-01-09T13:16:06.731Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:16:06.731Z",
+        "firstPublishedAt": "2022-01-09T13:16:06.731Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "21 Foundation"
+        },
+        "href": {
+          "en-US": "https://21foundation.com/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6FFLwLWvj9Ci2tV8zxmmEW"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "3d0n28A75J3MyK2sxR74PU",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:14:13.655Z",
+        "updatedAt": "2022-01-09T13:16:05.759Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-09T13:16:05.759Z",
+        "firstPublishedAt": "2022-01-09T13:16:05.759Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Space Gang"
+        },
+        "href": {
+          "en-US": "https://spacegang.club/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "4o5e247MZyDvdsZfPo4oWF"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "6jpmqAmJCszUR4TuDa0Kcf",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:14:30.720Z",
+        "updatedAt": "2022-01-09T13:16:05.718Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:16:05.718Z",
+        "firstPublishedAt": "2022-01-09T13:16:05.718Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Coinbase"
+        },
+        "href": {
+          "en-US": "https://www.coinbase.com/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5KLoHwUe2ZSWix5FjyKY4e"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "AU7s1pPLDSrUclEhE61yq",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:14:45.252Z",
+        "updatedAt": "2022-01-09T13:16:05.721Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:16:05.721Z",
+        "firstPublishedAt": "2022-01-09T13:16:05.721Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Coinhunt"
+        },
+        "href": {
+          "en-US": "https://coinhunt.cc/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3o61dN8ioWusalOejrCMlx"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "kl5QqtPrmKqrzZ5VsbLtK",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:15:02.752Z",
+        "updatedAt": "2022-01-09T13:16:05.740Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:16:05.740Z",
+        "firstPublishedAt": "2022-01-09T13:16:05.740Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Coin Market Cap"
+        },
+        "href": {
+          "en-US": "https://coinmarketcap.com/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "4G5Mr9CQp1L5UdP8BcGe1t"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "350YkG6lZZRVZkOoiEj6Vx",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:15:26.404Z",
+        "updatedAt": "2022-01-09T13:16:05.723Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:16:05.723Z",
+        "firstPublishedAt": "2022-01-09T13:16:05.723Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Coin Gecko"
+        },
+        "href": {
+          "en-US": "https://www.coingecko.com/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "x4dHCsInSaUOxO82l3oBc"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "51XPPEVHCsfgz9npfZMLFh",
+        "type": "Entry",
+        "createdAt": "2022-01-09T13:15:42.257Z",
+        "updatedAt": "2022-01-09T13:16:05.713Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:16:05.713Z",
+        "firstPublishedAt": "2022-01-09T13:16:05.713Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "partner"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "BscScan"
+        },
+        "href": {
+          "en-US": "https://bscscan.com/"
+        },
+        "logo": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3XJGG5iVPxyoFxfgBKqa4s"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "7J6uLt0iNftvcacwZfcOe4",
+        "type": "Entry",
+        "createdAt": "2022-01-10T16:26:15.609Z",
+        "updatedAt": "2022-01-10T16:38:27.710Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-10T16:38:27.710Z",
+        "firstPublishedAt": "2022-01-10T16:38:27.710Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "featured-news-item"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Yummy Staking Pools"
+        },
+        "youTubeVideoId": {
+          "en-US": "ekfwTjTuI4U"
+        },
+        "description": {
+          "en-US": "The video describes the NOVEL mechanism powering the Yummy Staking Pools. HIGHLY TECHNICAL and over 1 hour long so be sure to make yourself comfortable!"
+        },
+        "shareUrl": {
+          "en-US": "https://www.youtube.com/watch?v=ekfwTjTuI4U"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "7vPTqDmGJstyuFx74NXLVg",
+        "type": "Entry",
+        "createdAt": "2022-01-10T16:30:13.720Z",
+        "updatedAt": "2022-01-10T16:38:27.849Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-10T16:38:27.849Z",
+        "firstPublishedAt": "2022-01-10T16:38:27.849Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "featured-news-item"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "NFT Launch Prep + General Crypto Talk"
+        },
+        "youTubeVideoId": {
+          "en-US": "iWmnuIrllC0"
+        },
+        "description": {
+          "en-US": "Yummy NFTs coming Friday November 5th!!"
+        },
+        "shareUrl": {
+          "en-US": "https://www.youtube.com/watch?v=iWmnuIrllC0"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "6NjWbk3gMIg9KBig9sBofa",
+        "type": "Entry",
+        "createdAt": "2022-01-10T16:30:39.688Z",
+        "updatedAt": "2022-01-10T16:38:27.694Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-10T16:38:27.694Z",
+        "firstPublishedAt": "2022-01-10T16:38:27.694Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "featured-news-item"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Yummy Crypto V2 Upgrade is coming!"
+        },
+        "youTubeVideoId": {
+          "en-US": "9_VbPKRnPUg"
+        },
+        "description": {
+          "en-US": "The Yummy Team is upgrading the contract! This will introduce many new developments that will benefit the token! Watch the video to get all the answers you need about this massive improvement!"
+        },
+        "shareUrl": {
+          "en-US": "https://www.youtube.com/watch?v=9_VbPKRnPUg"
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "27fXnflC3bWKowlBDbKPP0",
+        "type": "Asset",
+        "createdAt": "2022-01-09T11:07:22.855Z",
+        "updatedAt": "2022-01-09T11:08:17.217Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T11:08:17.217Z",
+        "firstPublishedAt": "2022-01-09T11:08:17.217Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "bare-knuckle-logo"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/27fXnflC3bWKowlBDbKPP0/08555a3d2aa95fd5d59d8f73c81859ea/bare-knuckle-logo.png",
+            "details": {
+              "size": 45157,
+              "image": {
+                "width": 258,
+                "height": 258
+              }
+            },
+            "fileName": "bare-knuckle-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "juNWHiwDFm5fBkpHl55HW",
+        "type": "Asset",
+        "createdAt": "2022-01-09T11:30:53.133Z",
+        "updatedAt": "2022-01-09T11:31:06.376Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T11:31:06.376Z",
+        "firstPublishedAt": "2022-01-09T11:31:06.376Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "soku-swap-logo"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/juNWHiwDFm5fBkpHl55HW/6230e00cbbb457dc2b4fea4654859148/soku-swap-logo.png",
+            "details": {
+              "size": 6610,
+              "image": {
+                "width": 342,
+                "height": 310
+              }
+            },
+            "fileName": "soku-swap-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "565GQZl1M1OvN6BS8Ceqf2",
+        "type": "Asset",
+        "createdAt": "2022-01-09T12:22:11.678Z",
+        "updatedAt": "2022-01-09T13:16:19.728Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2022-01-09T13:16:19.728Z",
+        "firstPublishedAt": "2022-01-09T13:16:19.728Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "michael-avatar"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/565GQZl1M1OvN6BS8Ceqf2/64c27d607b393d0f418b4502db3451f3/96788067.png",
+            "details": {
+              "size": 3411,
+              "image": {
+                "width": 460,
+                "height": 460
+              }
+            },
+            "fileName": "96788067.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "dwqbTvnHxcVdOedQai1q0",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:10:24.003Z",
+        "updatedAt": "2022-01-09T13:10:42.830Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2022-01-09T13:10:42.830Z",
+        "firstPublishedAt": "2022-01-09T13:10:42.830Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "pancake-swap-logo"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/dwqbTvnHxcVdOedQai1q0/e0d1ae06fd5c50dfb0586e2d4f527d7e/pancake-swap-logo.png",
+            "details": {
+              "size": 144314,
+              "image": {
+                "width": 500,
+                "height": 500
+              }
+            },
+            "fileName": "pancake-swap-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "5q35i7RqxST6IAnffZL7QE",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:11.292Z",
+        "updatedAt": "2022-01-09T13:16:18.750Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:18.750Z",
+        "firstPublishedAt": "2022-01-09T13:16:18.750Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "dreamfield-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/5q35i7RqxST6IAnffZL7QE/c5516f16fdc764e968bc80c8460e3fa0/dreamfield-logo.png",
+            "details": {
+              "size": 5218,
+              "image": {
+                "width": 128,
+                "height": 57
+              }
+            },
+            "fileName": "dreamfield-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "3o61dN8ioWusalOejrCMlx",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:11.297Z",
+        "updatedAt": "2022-01-09T13:16:18.744Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:18.744Z",
+        "firstPublishedAt": "2022-01-09T13:16:18.744Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "coinhunt-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/3o61dN8ioWusalOejrCMlx/12aafe3c66b5fc8401c1538d164fde6e/coinhunt-logo.png",
+            "details": {
+              "size": 11705,
+              "image": {
+                "width": 226,
+                "height": 74
+              }
+            },
+            "fileName": "coinhunt-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "5KLoHwUe2ZSWix5FjyKY4e",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:11.297Z",
+        "updatedAt": "2022-01-09T13:16:19.744Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:19.744Z",
+        "firstPublishedAt": "2022-01-09T13:16:19.744Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "coinbase-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/5KLoHwUe2ZSWix5FjyKY4e/805a7364022958a19e1fa00d3e1b83eb/coinbase-logo.png",
+            "details": {
+              "size": 5247,
+              "image": {
+                "width": 500,
+                "height": 500
+              }
+            },
+            "fileName": "coinbase-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "x4dHCsInSaUOxO82l3oBc",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:11.306Z",
+        "updatedAt": "2022-01-09T13:16:18.737Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:18.737Z",
+        "firstPublishedAt": "2022-01-09T13:16:18.737Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "coin-gecko-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/x4dHCsInSaUOxO82l3oBc/25b90c4fa8114ad8e2a2ae64ec99eabd/coin-gecko-logo.png",
+            "details": {
+              "size": 15943,
+              "image": {
+                "width": 250,
+                "height": 250
+              }
+            },
+            "fileName": "coin-gecko-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "5l9hvI6Qcx7TmRSOlofndc",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:11.318Z",
+        "updatedAt": "2022-01-09T13:16:17.702Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:17.702Z",
+        "firstPublishedAt": "2022-01-09T13:16:17.702Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "marina-dalglish-appeal-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/5l9hvI6Qcx7TmRSOlofndc/d9ce5a5f0a06e5b6d08d79824bb0c27e/marina-dalglish-appeal-logo.png",
+            "details": {
+              "size": 17018,
+              "image": {
+                "width": 400,
+                "height": 400
+              }
+            },
+            "fileName": "marina-dalglish-appeal-logo.png",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "4G5Mr9CQp1L5UdP8BcGe1t",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:11.332Z",
+        "updatedAt": "2022-01-09T13:16:18.709Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:18.709Z",
+        "firstPublishedAt": "2022-01-09T13:16:18.709Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "coin-market-cap-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/4G5Mr9CQp1L5UdP8BcGe1t/28726b3515c15d0d7f7efb1fbc86d5e4/coin-market-cap-logo.png",
+            "details": {
+              "size": 20644,
+              "image": {
+                "width": 290,
+                "height": 149
+              }
+            },
+            "fileName": "coin-market-cap-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "5wBMOlWyzwP4DltYwfKILf",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:12.218Z",
+        "updatedAt": "2022-01-09T13:16:17.702Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:17.702Z",
+        "firstPublishedAt": "2022-01-09T13:16:17.702Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "slam-token-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/5wBMOlWyzwP4DltYwfKILf/91107746b06054850afb9ce9bba16d62/slam-token-logo.png",
+            "details": {
+              "size": 115252,
+              "image": {
+                "width": 109,
+                "height": 93
+              }
+            },
+            "fileName": "slam-token-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "oYPYJMZhXKKt04ye2xReS",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:12.236Z",
+        "updatedAt": "2022-01-09T13:16:17.720Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:17.720Z",
+        "firstPublishedAt": "2022-01-09T13:16:17.720Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "bitmart-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/oYPYJMZhXKKt04ye2xReS/345cbd2e18c1cf5814f4cc8d7da19920/bitmart-logo.png",
+            "details": {
+              "size": 135473,
+              "image": {
+                "width": 800,
+                "height": 800
+              }
+            },
+            "fileName": "bitmart-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "kGr35UX1OLnLhPCKjWIey",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:12.239Z",
+        "updatedAt": "2022-01-09T13:16:18.719Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:18.719Z",
+        "firstPublishedAt": "2022-01-09T13:16:18.719Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "sorai-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/kGr35UX1OLnLhPCKjWIey/16fa61dcaaba6a8521704b7dba6dad94/sorai-logo.png",
+            "details": {
+              "size": 37040,
+              "image": {
+                "width": 900,
+                "height": 900
+              }
+            },
+            "fileName": "sorai-logo.png",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "6FFLwLWvj9Ci2tV8zxmmEW",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:12.242Z",
+        "updatedAt": "2022-01-09T13:16:17.688Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:17.688Z",
+        "firstPublishedAt": "2022-01-09T13:16:17.688Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "21-foundation-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/6FFLwLWvj9Ci2tV8zxmmEW/5260ac758c0640d70fc17362c156ff89/21-foundation-logo.png",
+            "details": {
+              "size": 27328,
+              "image": {
+                "width": 512,
+                "height": 512
+              }
+            },
+            "fileName": "21-foundation-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "671Uxr9LkYjaIZSepJPn99",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:12.246Z",
+        "updatedAt": "2022-01-09T13:16:17.695Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:17.695Z",
+        "firstPublishedAt": "2022-01-09T13:16:17.695Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "binance-charity-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/671Uxr9LkYjaIZSepJPn99/015669bb27b557dbd8c2e33ba770445e/binance-charity-logo.png",
+            "details": {
+              "size": 10578,
+              "image": {
+                "width": 225,
+                "height": 225
+              }
+            },
+            "fileName": "binance-charity-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "4o5e247MZyDvdsZfPo4oWF",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:12.247Z",
+        "updatedAt": "2022-01-09T13:16:18.716Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:18.716Z",
+        "firstPublishedAt": "2022-01-09T13:16:18.716Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "space-gang-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/4o5e247MZyDvdsZfPo4oWF/dce3e58ce6838747fa6ba8f75189ec28/space-gang-logo.png",
+            "details": {
+              "size": 14210,
+              "image": {
+                "width": 500,
+                "height": 333
+              }
+            },
+            "fileName": "space-gang-logo.png",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "id": "3XJGG5iVPxyoFxfgBKqa4s",
+        "type": "Asset",
+        "createdAt": "2022-01-09T13:11:13.214Z",
+        "updatedAt": "2022-01-09T13:16:17.728Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2022-01-09T13:16:17.728Z",
+        "firstPublishedAt": "2022-01-09T13:16:17.728Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "bsc-scan-logo"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/c3il6u0f7gb2/3XJGG5iVPxyoFxfgBKqa4s/e61d896c115355d5e16b383c409eaf0a/bsc-scan-logo.png",
+            "details": {
+              "size": 62057,
+              "image": {
+                "width": 512,
+                "height": 370
+              }
+            },
+            "fileName": "bsc-scan-logo.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    }
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "7fS4QwDtXYOCYVYt7FFo7v",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "8b4c71ae-31f9-4eb6-ae42-24ba97c1055b"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "createdAt": "2022-01-08T08:21:41Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedAt": "2022-01-08T08:21:41Z"
+      }
+    }
+  ],
+  "webhooks": [
+    {
+      "name": "Netlify - Deploy a site",
+      "url": "https://api.netlify.com/build_hooks/61dbf22848a39c4374746d45",
+      "httpBasicUsername": null,
+      "topics": [
+        "Entry.publish",
+        "Asset.publish",
+        "Entry.unpublish",
+        "Asset.unpublish"
+      ],
+      "filters": [
+        {
+          "equals": [
+            {
+              "doc": "sys.environment.sys.id"
+            },
+            "master"
+          ]
+        }
+      ],
+      "transformation": {
+        "contentType": "application/json"
+      },
+      "active": true,
+      "sys": {
+        "type": "WebhookDefinition",
+        "id": "2JZRDPDtUtAwI83IGvvOOD",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "createdAt": "2022-01-09T11:29:37Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedAt": "2022-01-10T08:45:46Z"
+      },
+      "headers": [
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "name": "Editor",
+      "description": "Allows editing, publishing and archiving of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "7fVjcjYVpI4uVgmKZUEnm9",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "c3il6u0f7gb2"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "createdAt": "2022-01-08T08:21:41Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "6JKqDh3RTzzhVVBUcP2n4n"
+          }
+        },
+        "updatedAt": "2022-01-08T08:21:41Z"
+      }
+    }
+  ]
+}
