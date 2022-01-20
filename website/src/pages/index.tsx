@@ -313,8 +313,6 @@ export const getStaticProps: GetStaticProps = async () => {
     limit: 3,
   })
 
-  console.log(featuredNewsItems)
-
   return {
     props: {
       partners: partners.items,
